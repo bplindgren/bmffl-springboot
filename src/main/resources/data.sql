@@ -21,7 +21,7 @@ insert into bmffl.owners (id, firstName, lastInitial, division) values (11, 'Rya
 
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (1, 'IHH47', 'upstairs', 'Iowa HerkysHeroes47', 1, 1);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (2, 'WW', 'downstairs', 'Westside Whales', 2, 1);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (3, 'BMN', 'upstairs', 'Bustin McNutts', 3, 1);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (3, 'BMN', 'upstairs', 'Bustin'' McNutts', 3, 1);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (4, 'RS', 'upstairs', 'The Ricky Stanzis', 4, 1);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (5, 'IFFFF', 'downstairs', 'Iowa Football', 5, 1);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (6, 'OC', 'downstairs', 'Orange Crush', 6, 1);
@@ -31,7 +31,7 @@ insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (10, 'BELT', 'downstairs', 'The Belt', 10, 1);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (11, 'IHH47', 'upstairs', 'Iowa HerkysHeroes47', 1, 2);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (12, 'WW', 'downstairs', 'Westside Whales', 2, 2);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (13, 'DDMF', 'upstairs', 'Dont Diss My Fiedorowicz', 3, 2);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (13, 'DDMF', 'upstairs', 'Don''t Diss My Fiedorowicz', 3, 2);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (14, 'RS', 'upstairs', 'The Ricky Stanzis', 4, 2);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (15, 'IFFFF', 'downstairs', 'Iowa Football', 5, 2);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (16, 'OC', 'downstairs', 'Orange Crush', 6, 2);
@@ -51,7 +51,7 @@ insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (30, 'MM', 'downstairs', 'Mustache Madness', 10, 3);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (31, 'IHH47', 'upstairs', 'Iowa HerkysHeroes47', 1, 4);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (32, 'WW', 'downstairs', 'Westside Whales', 2, 4);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (33, 'HDP', 'upstairs', 'Harbaughs Dad Pants', 3, 4);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (33, 'HDP', 'upstairs', 'Harbaugh''s Dad Pants', 3, 4);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (34, 'RS', 'upstairs', 'The Ricky Stanzis', 4, 4);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (35, 'IFFFF', 'downstairs', 'Iowa Football', 5, 4);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (36, 'OC', 'downstairs', 'Orange Crush', 6, 4);
@@ -66,7 +66,7 @@ insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (45, 'IFFFF', 'downstairs', 'Iowa Football', 5, 5);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (46, 'OC', 'downstairs', 'Orange Crush', 6, 5);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (47, 'BT', 'upstairs', 'Ballz Tech', 7, 5);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (48, 'MRN', 'downstairs', 'Mr. Rodgers Neighborhood', 8, 5);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (48, 'MRN', 'downstairs', 'Mr. Rodgers'' Neighborhood', 8, 5);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (49, 'MM', 'downstairs', 'Mustache Madness', 10, 5);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (50, 'TRFWFGF', 'upstairs', 'Team R.F.W.F.G.B.', 11, 5);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (51, 'IHH47', 'upstairs', 'Iowa HerkysHeroes47', 1, 6);
@@ -76,28 +76,28 @@ insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (55, 'IFFFF', 'downstairs', 'Iowa Football', 5, 6);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (56, 'OC', 'downstairs', 'Orange Crush', 6, 6);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (57, 'BT', 'upstairs', 'Ballz Tech', 7, 6);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (58, 'MRN', 'downstairs', 'Mr. Rodgers Neighborhood', 8, 6);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (58, 'MRN', 'downstairs', 'Mr. Rodgers'' Neighborhood', 8, 6);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (59, 'MM', 'downstairs', 'Mustache Madness', 10, 6);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (60, 'FISH', 'upstairs', 'Team R.F.W.F.G.B.', 11, 6);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (61, 'IHH47', 'upstairs', 'Iowa HerkysHeroes47', 1, 7);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (62, 'WW', 'downstairs', 'Westside Whales', 2, 7);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (63, 'YG2BKM', 'upstairs', 'Youve Got to be Kittling Me', 3, 7);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (63, 'YG2BKM', 'upstairs', 'You''ve Got to be Kittling Me', 3, 7);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (64, 'RS', 'upstairs', 'The Ricky Stanzis', 4, 7);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (65, 'IFFFF', 'downstairs', 'Iowa Football', 5, 7);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (66, 'OC', 'downstairs', 'Orange Crush', 6, 7);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (67, 'BT', 'upstairs', 'Ballz Tech', 7, 7);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (68, 'MRN', 'downstairs', 'Mr. Rodgers Neighborhood', 8, 7);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (68, 'MRN', 'downstairs', 'Mr. Rodgers'' Neighborhood', 8, 7);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (69, 'MD', 'downstairs', 'Mustache Dadness', 10, 7);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (70, 'RGB', 'upstairs', 'ROY GBIV', 11, 7);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (71, 'IHH47', 'upstairs', 'Iowa HerkysHeroes47', 1, 8);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (72, 'WW', 'downstairs', 'Westside Whales', 2, 8);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (73, 'YG2BKM', 'upstairs', 'Brian Kass Team', 3, 8);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (73, 'FTTD', 'upstairs', 'FANTastic TDs', 3, 8);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (74, 'RS', 'upstairs', 'The Ricky Stanzis', 4, 8);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (75, 'IFFFF', 'downstairs', 'Iowa Football', 5, 8);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (75, 'IFFFF', 'downstairs', 'IOWA FOOTBALL', 5, 8);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (76, 'OC', 'downstairs', 'Orange Crush', 6, 8);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (77, 'BT', 'upstairs', 'Ballz Tech', 7, 8);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (78, 'MRN', 'downstairs', 'Mr. Rodgers Neighborhood', 8, 8);
-insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (79, 'MD', 'downstairs', 'Mustache Dadness', 10, 8);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (78, 'MRN', 'downstairs', 'Mr. Rodgers'' Neighborhood', 8, 8);
+insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (79, 'ILB', 'downstairs', 'IFFFF''s Lil'' Bro', 10, 8);
 insert into bmffl.teams (id, abbr, division, name, owner_id, season_id) values (80, 'RGB', 'upstairs', 'ROY GBIV', 11, 8);
 
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (1, 1, 1, 4, 100, 2, 106.5, true, 'Regular Season');
@@ -653,11 +653,11 @@ insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_i
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (551, 7, 16, 63, 70, 66, 91.5, true, 'Consolation Game');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (552, 7, 16, 70, 74, 62, 96.5, true, 'Consolation Game');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (553, 7, 16, 69, 85, 67, 54, true, 'Consolation Game');
-insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (554, 8, 1, 77, 0, 74, 0, false, 'Regular Season');
-insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (555, 8, 1, 76, 0, 80, 0, false, 'Regular Season');
-insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (556, 8, 1, 71, 0, 73, 0, false, 'Regular Season');
-insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (557, 8, 1, 72, 0, 79, 0, false, 'Regular Season');
-insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (558, 8, 1, 75, 0, 78, 0, false, 'Regular Season');
+insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (554, 8, 1, 77, 75.2, 74, 105.5, true, 'Regular Season');
+insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (555, 8, 1, 76, 91.5, 80, 110.9, true, 'Regular Season');
+insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (556, 8, 1, 71, 93.9, 73, 127.3, true, 'Regular Season');
+insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (557, 8, 1, 72, 107.5, 79, 102.3, true, 'Regular Season');
+insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (558, 8, 1, 75, 103.2, 78, 93.3, true, 'Regular Season');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (559, 8, 2, 74, 0, 76, 0, false, 'Regular Season');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (560, 8, 2, 73, 0, 77, 0, false, 'Regular Season');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (561, 8, 2, 79, 0, 78, 0, false, 'Regular Season');
