@@ -16,9 +16,6 @@ import com.repository.TeamRepository;
 @Service
 public class TeamService implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private TeamRepository teamRepo;
 	@PersistenceContext
