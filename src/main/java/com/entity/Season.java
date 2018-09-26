@@ -9,14 +9,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="seasons")
+@NamedStoredProcedureQuery(
+	name = "get_owner_seasons", 
+	procedureName = "get_owner_seasons",
+	parameters = {
+		@StoredProcedureParameter(
+			mode = ParameterMode.IN,
+			name = "owner_",
+			type = Integer.class)
+	}
+)
 public class Season {
 
 	@Id

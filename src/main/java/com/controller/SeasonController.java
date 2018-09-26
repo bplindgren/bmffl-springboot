@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.Game;
 import com.entity.Owner;
+import com.entity.OwnerSeasons;
 import com.entity.Season;
 import com.entity.Team;
 import com.service.SeasonService;
@@ -29,6 +30,11 @@ public class SeasonController {
 	public List<Season> getSeasons() {
 		return seasonService.getSeasons();
 	}	
+	
+	@GetMapping("/getOwnerSeasons/{owner_id}")
+	public String getOwnerSeasons(@PathVariable String owner_id) {
+		return seasonService.getOwnerSeasons(owner_id);
+	}
 
 	@GetMapping("/{year}")
 	public Season getSeason(@PathVariable String year) {
