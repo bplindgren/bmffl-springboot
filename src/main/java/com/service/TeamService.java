@@ -1,6 +1,7 @@
 package com.service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.ParameterMode;
@@ -46,10 +47,15 @@ public class TeamService implements Serializable {
 		int ties = Integer.parseInt(values[2]);
 		
 		Record record = new Record(wins, losses, ties);		
-//		System.out.println(record.getWins());
-//		System.out.println(record.getLosses());
-//		System.out.println(record.getTies());
 		return record;
+	}
+	
+	public List<Team> getOwnerTeams(int owner_id) {
+		return teamRepo.findByOwnerId(owner_id);
+	}
+	
+	public List<Team> getAllTeams() {
+		return teamRepo.findAll();
 	}
 	
 }

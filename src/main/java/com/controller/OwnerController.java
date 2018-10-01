@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.entity.AllTimeStandingsView;
 import com.entity.Game;
 import com.entity.Owner;
+import com.entity.Record;
 import com.service.OwnerService;
 
 @RestController
@@ -35,9 +37,10 @@ public class OwnerController {
 		return ownerService.getOwner(nameArray[0], nameArray[1]);
 	}
 	
-	@GetMapping("division/{division}")
-	public List<Owner> getDivisionOwners(@PathVariable String division) {
-		return ownerService.getDivisionOwners(division);
+	@GetMapping("getAllTimeRecords")
+	public List<AllTimeStandingsView> getAllTimeRecord() {
+		System.out.println("getting all records");
+		return ownerService.getAllTimeRecords();
 	}
 	
 	@GetMapping("/games/{firstName}/{lastInitial}")

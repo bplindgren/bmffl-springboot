@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,9 +28,19 @@ public class TeamController {
 		return teamService.getTeamById(id);
 	}
 	
+	@GetMapping("/all")
+	public List<Team> getAllTeams() {
+		return teamService.getAllTeams();
+	}
+	
 	@GetMapping("/record/{id}/{week}")
 	public Record getTeamRecord(@PathVariable String id, @PathVariable String week) {
 		return teamService.getWeekRecord(id, week);
+	}
+	
+	@GetMapping("/owner/{owner_id}")
+	public List<Team> getOwnerTeams(@PathVariable int owner_id) {
+		return teamService.getOwnerTeams(owner_id);
 	}
 	
 }

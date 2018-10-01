@@ -1,5 +1,6 @@
 package com.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -7,13 +8,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="owners")
+@NamedStoredProcedureQuery(
+	name="get_all_time_records",
+	procedureName="get_all_time_records"
+)
 public class Owner {
 	
 	@Id
@@ -32,7 +40,7 @@ public class Owner {
 	
 	@OneToMany(mappedBy="owner")
 	@JsonIgnore
-	private Set<Team> teams;
+	private List<Team> teams;
 
 	public int getId() {
 		return id;
@@ -54,7 +62,6 @@ public class Owner {
 		this.lastInitial = lastInitial;
 	}
 	
-
 	public String getDivision() {
 		return division;
 	}
@@ -63,7 +70,7 @@ public class Owner {
 		this.division = division;
 	}
 
-	public Set<Team> getTeams() {
+	public List<Team> getTeams() {
 		return teams;
 	}
 	

@@ -3,10 +3,16 @@ package com.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.ParameterMode;
+import javax.persistence.PersistenceContext;
+import javax.persistence.StoredProcedureQuery;
+
 import org.springframework.stereotype.Service;
 
 import com.entity.Game;
 import com.entity.Owner;
+import com.entity.OwnerSeasons;
 import com.entity.Season;
 import com.entity.Team;
 import com.repository.GameRepository;
@@ -21,6 +27,8 @@ public class SeasonService {
 	private GameRepository gameRepo;
 	private TeamRepository teamRepo;
 	private OwnerRepository ownerRepo;
+	@PersistenceContext
+	private EntityManager em;
 
 	public SeasonService(SeasonRepository seasonRepo, GameRepository gameRepo, TeamRepository teamRepo, OwnerRepository ownerRepo) {
 		this.seasonRepo = seasonRepo;
@@ -62,6 +70,24 @@ public class SeasonService {
 		List<Owner> seasonOwners = new ArrayList<Owner>();
 		seasonOwners = ownerRepo.findById(teamIDs);
 		return seasonOwners;
+	}
+	
+	public OwnerSeasons getOwnerSeasons(String owner_id) {
+		Integer owner_int = Integer.parseInt(owner_id);
+		
+		StoredProcedureQuery query = em.createStoredProcedureQuery("get_owner_seasons");
+		query.registerStoredProcedureParameter(1, Integer.class, ParameterMode.IN);
+		query.setParameter(1, owner_int);	
+		
+		String result = (String) query.getSingleResult();
+		
+		String[] values = result.split("-");
+		String firstSeason = values[0];
+		String lastSeason = values[1];
+		System.out.println(result);
+		
+		OwnerSeasons os = new OwnerSeasons(owner_int, firstSeason, lastSeason);
+		return os;
 	}
 	
 }
