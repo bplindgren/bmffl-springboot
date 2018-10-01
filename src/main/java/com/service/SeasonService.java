@@ -72,16 +72,22 @@ public class SeasonService {
 		return seasonOwners;
 	}
 	
-//	public List<OwnerSeasons> getOwnerSeasons() {
-	public String getOwnerSeasons(String owner_id) {
+	public OwnerSeasons getOwnerSeasons(String owner_id) {
 		Integer owner_int = Integer.parseInt(owner_id);
-		System.out.println(owner_int);
+		
 		StoredProcedureQuery query = em.createStoredProcedureQuery("get_owner_seasons");
 		query.registerStoredProcedureParameter(1, Integer.class, ParameterMode.IN);
 		query.setParameter(1, owner_int);	
 		
 		String result = (String) query.getSingleResult();
-		return result;
+		
+		String[] values = result.split("-");
+		String firstSeason = values[0];
+		String lastSeason = values[1];
+		System.out.println(result);
+		
+		OwnerSeasons os = new OwnerSeasons(owner_int, firstSeason, lastSeason);
+		return os;
 	}
 	
 }

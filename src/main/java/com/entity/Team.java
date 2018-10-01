@@ -53,6 +53,9 @@ public class Team implements Serializable {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(nullable=false)
 	private Owner owner;
+	
+	@Column(nullable=false, length=4)
+	private String year;
 
 	@ManyToOne
 	@JoinColumn(nullable=false)
@@ -118,6 +121,14 @@ public class Team implements Serializable {
 
 	public Owner getOwner() {
 		return owner;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
 	}
 
 	public Season getSeason() {

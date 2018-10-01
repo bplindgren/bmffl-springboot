@@ -32,7 +32,7 @@ public class SeasonController {
 	}	
 	
 	@GetMapping("/getOwnerSeasons/{owner_id}")
-	public String getOwnerSeasons(@PathVariable String owner_id) {
+	public OwnerSeasons getOwnerSeasons(@PathVariable String owner_id) {
 		return seasonService.getOwnerSeasons(owner_id);
 	}
 
