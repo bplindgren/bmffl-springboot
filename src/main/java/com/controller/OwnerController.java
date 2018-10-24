@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.entity.AllTimeStandingsView;
 import com.entity.Game;
 import com.entity.Owner;
-import com.entity.Record;
 import com.service.OwnerService;
 
 @RestController

@@ -6,7 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+// The table is the View !!!!!!
 @Table(name="all_time_standings_view")
+// The response from the API creates this object
 public class AllTimeStandingsView {
 
 	@Id
@@ -35,19 +37,19 @@ public class AllTimeStandingsView {
 	private float winning_pct;
 	
 	@Column(name="points_for", nullable=false)
-	private int points_for;
+	private float points_for;
 	
 	@Column(name="points_against", nullable=false)
-	private int points_against;
+	private float points_against;
 	
 	@Column(name="point_differential", nullable=false)
-	private int point_differential;
+	private float point_differential;
 	
 	@Column(name="pfpg", nullable=false)
-	private int pfpg;
+	private float pfpg;
 	
 	@Column(name="papg", nullable=false)
-	private int papg;
+	private float papg;
 
 	public int getOwner_id() {
 		return owner_id;
@@ -81,23 +83,23 @@ public class AllTimeStandingsView {
 		return winning_pct;
 	}
 
-	public int getPoints_for() {
+	public float getPoints_for() {
 		return points_for;
 	}
 
-	public int getPoints_against() {
+	public float getPoints_against() {
 		return points_against;
 	}
 
-	public int getPoint_differential() {
+	public float getPoint_differential() {
 		return point_differential;
 	}
 
-	public int getPfpg() {
+	public float getPfpg() {
 		return pfpg;
 	}
 
-	public int getPapg() {
+	public float getPapg() {
 		return papg;
 	}
 	
