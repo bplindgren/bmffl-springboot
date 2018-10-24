@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.StoredProcedureQuery;
 
 import org.assertj.core.util.Arrays;
+import org.postgresql.core.Query;
 import org.springframework.stereotype.Service;
 
 import com.entity.AllTimeStandingsView;
@@ -75,8 +76,10 @@ public class OwnerService {
 //		int ties = Integer.parseInt(values[2]);
 //		
 //		Record record = new Record(wins, losses, ties);
-//		List<Record> records = em.createQuery("SELECT wins, losses, ties FROM bmffl.all_time_standings_view", Record.class).getResultList();
-//		return records;
+//		List<Record> records = em.createQuery("SELECT wins, losses, ties FROM bmffl.vw_all_time_standings", Record.class).getResultList();
+//		System.out.println(records.toString());
+		//		return records;
+
 		List<AllTimeStandingsView> res = atsRepo.findAll();
 		System.out.println("1");
 		System.out.println(res.toString());
