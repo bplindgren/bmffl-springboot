@@ -7,13 +7,15 @@ import javax.persistence.Table;
 
 @Entity
 // The table is the View !!!!!!
+// A new table will be created if db is dropped and rebuilt.
+// Otherwise, it's looking at the view
 @Table(name="all_time_standings_view")
 // The response from the API creates this object
 public class AllTimeStandingsView {
 
 	@Id
-	@Column(name="owner_id", nullable=false)
-	private int owner_id;
+	@Column(name="ownerId", nullable=false)
+	private int ownerId;
 	
 	@Column(name="firstname", nullable=false)
 	private String firstname;
@@ -33,26 +35,29 @@ public class AllTimeStandingsView {
 	@Column(name="ties", nullable=false)
 	private Long ties;
 	
-	@Column(name="winning_pct", nullable=false)
-	private float winning_pct;
+	@Column(name="winningPct", nullable=false)
+	private float winningPct;
 	
-	@Column(name="points_for", nullable=false)
-	private float points_for;
+	@Column(name="pointsFor", nullable=false)
+	private float pointsFor;
 	
-	@Column(name="points_against", nullable=false)
-	private float points_against;
+	@Column(name="pointsAgainst", nullable=false)
+	private float pointsAgainst;
 	
-	@Column(name="point_differential", nullable=false)
-	private float point_differential;
+	@Column(name="pointDifferential", nullable=false)
+	private float pointDifferential;
 	
 	@Column(name="pfpg", nullable=false)
 	private float pfpg;
 	
 	@Column(name="papg", nullable=false)
 	private float papg;
+	
+	@Column(name="ppgDiff", nullable=false)
+	private float ppgDiff;
 
-	public int getOwner_id() {
-		return owner_id;
+	public int getOwnerId() {
+		return ownerId;
 	}
 
 	public String getFirstname() {
@@ -79,20 +84,20 @@ public class AllTimeStandingsView {
 		return ties;
 	}
 
-	public float getWinning_pct() {
-		return winning_pct;
+	public float getWinningPct() {
+		return winningPct;
 	}
 
-	public float getPoints_for() {
-		return points_for;
+	public float getPointsFor() {
+		return pointsFor;
 	}
 
-	public float getPoints_against() {
-		return points_against;
+	public float getPointsAgainst() {
+		return pointsAgainst;
 	}
 
-	public float getPoint_differential() {
-		return point_differential;
+	public float getPointDifferential() {
+		return pointDifferential;
 	}
 
 	public float getPfpg() {
@@ -103,6 +108,8 @@ public class AllTimeStandingsView {
 		return papg;
 	}
 	
-	
+	public float getPpgDiff() {
+		return ppgDiff;
+	}	
 	
 }

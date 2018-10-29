@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.AllTimeStandingsView;
-import com.entity.Game;
 import com.entity.Owner;
 import com.service.OwnerService;
 
@@ -29,22 +28,20 @@ public class OwnerController {
 		return ownerService.getOwners();
 	}
 	
-	@GetMapping("/{name}")
-	public Owner getOwner(@PathVariable String name) {
-		System.out.println(name);
-		String[] nameArray = name.split("-", 5);
-		return ownerService.getOwner(nameArray[0], nameArray[1]);
+	@GetMapping("/{id}")
+	public Owner getOwner(@PathVariable Integer id) {
+		return ownerService.getOwner(id);
+	}
+	
+	@GetMapping("getOwnerAllTimeStats/{id}")
+	public AllTimeStandingsView getOwnerAllTimeStats(@PathVariable Integer id) {
+		return ownerService.getOwnerAllTimeStats(id);
 	}
 	
 	@GetMapping("getAllTimeRecords")
 	public List<AllTimeStandingsView> getAllTimeRecord() {
 		System.out.println("getting all records");
 		return ownerService.getAllTimeRecords();
-	}
-	
-	@GetMapping("/games/{firstName}/{lastInitial}")
-	public List<Game> getOwnerGames(@PathVariable String firstName, @PathVariable String lastInitial) {
-		return ownerService.getOwnerGames(firstName, lastInitial);
 	}
 	
 }

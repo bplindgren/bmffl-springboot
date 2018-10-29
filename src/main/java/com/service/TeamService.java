@@ -11,7 +11,9 @@ import javax.persistence.StoredProcedureQuery;
 import org.springframework.stereotype.Service;
 
 import com.entity.Record;
+import com.entity.SeasonStats;
 import com.entity.Team;
+import com.repository.SeasonStatsRepository;
 import com.repository.TeamRepository;
 
 @Service
@@ -21,11 +23,17 @@ public class TeamService implements Serializable {
 	private TeamRepository teamRepo;
 	@PersistenceContext
 	private EntityManager em;
+	private SeasonStatsRepository seasonStatsRepo;
 
-	public TeamService(TeamRepository teamRepo) {
+	public TeamService(TeamRepository teamRepo, SeasonStatsRepository seasonStatsRepo) {
 		this.teamRepo = teamRepo;
+		this.seasonStatsRepo = seasonStatsRepo;
 	}
 
+	public List<Team> getAllTeams() {
+		return teamRepo.findAll();
+	}
+	
 	public Team getTeamById(int id) {
 		return teamRepo.findById(id);
 	}
@@ -54,8 +62,11 @@ public class TeamService implements Serializable {
 		return teamRepo.findByOwnerId(owner_id);
 	}
 	
-	public List<Team> getAllTeams() {
-		return teamRepo.findAll();
+	public List<SeasonStats> getOwnerTeamsSeasonStats(int ownerId) {
+//	  List<SeasonStats> stats = em.createQuery("SELECT wins FROM bmffl.vw_season_stats", SeasonStats.class).getResultList();
+		List<SeasonStats> s = seasonStatsRepo.findByOwnerId(ownerId);
+		System.out.println(s);
+		return s;
 	}
 	
 }
