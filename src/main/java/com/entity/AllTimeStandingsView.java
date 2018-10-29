@@ -52,6 +52,9 @@ public class AllTimeStandingsView {
 	
 	@Column(name="papg", nullable=false)
 	private float papg;
+	
+	@Column(name="ppgDiff", nullable=false)
+	private float ppgDiff;
 
 	public int getOwnerId() {
 		return ownerId;
@@ -105,6 +108,8 @@ public class AllTimeStandingsView {
 		return papg;
 	}
 	
-	
+	public float getPpgDiff() {
+		return ppgDiff;
+	}	
 	
 }
