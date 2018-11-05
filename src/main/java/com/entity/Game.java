@@ -50,7 +50,7 @@ public class Game {
 
 	@Column(nullable=false)
 	private boolean completed;
-
+	
 	public int getId() {
 		return id;
 	}
@@ -86,7 +86,7 @@ public class Game {
 	public boolean isCompleted() {
 		return completed;
 	}
-	
+
 	@JsonIgnore
 	public Team getWinner() throws Exception {
 		if (homeScore > awayScore) {

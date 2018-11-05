@@ -34,17 +34,17 @@ public class Season {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id", nullable=false)
+	@Column(nullable=false)
 	private int id;
 	
-	@Column(name="year", nullable=false, length=8)
+	@Column(nullable=false, length=8)
 	private String year;
 	
 	@OneToMany(mappedBy="season")
 	@JsonIgnore
 	private Set<Team> teams;
 	
-	@Column(name="completed", nullable=false)
+	@Column(nullable=false)
 	private boolean completed;
 	
 	@OneToOne(cascade=CascadeType.ALL)
@@ -57,10 +57,6 @@ public class Season {
 
 	public String getYear() {
 		return year;
-	}
-
-	public Set<Team> getTeams() {
-		return teams;
 	}
 	
 	public boolean isCompleted() {

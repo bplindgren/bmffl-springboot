@@ -105,7 +105,6 @@ public class Team implements Serializable {
 	@OneToMany(mappedBy="awayTeam")
 	@JsonIgnore
 	private List<Game> awayGames;
-	
 
 	public int getId() {
 		return id;
@@ -127,17 +126,13 @@ public class Team implements Serializable {
 		return year;
 	}
 
-	public void setYear(String year) {
-		this.year = year;
-	}
-
 	public Season getSeason() {
 		return season;
 	}
-	
+
 	public String getDivision() {
 		return division;
-	}	
+	}
 
 	public Integer getStanding() {
 		return standing;
