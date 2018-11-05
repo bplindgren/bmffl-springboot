@@ -20,16 +20,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="seasons")
-@NamedStoredProcedureQuery(
-	name = "get_owner_seasons", 
-	procedureName = "get_owner_seasons",
-	parameters = {
-		@StoredProcedureParameter(
-			mode = ParameterMode.IN,
-			name = "owner_",
-			type = Integer.class)
-	}
-)
+//@NamedStoredProcedureQuery(
+//	name = "get_owner_seasons", 
+//	procedureName = "get_owner_seasons",
+//	parameters = {
+//		@StoredProcedureParameter(
+//			mode = ParameterMode.IN,
+//			name = "owner_",
+//			type = Integer.class)
+//	}
+//)
 public class Season {
 
 	@Id
@@ -37,14 +37,14 @@ public class Season {
 	@Column(name="id", nullable=false)
 	private int id;
 	
-	@Column(nullable=false, length=8)
+	@Column(name="year", nullable=false, length=8)
 	private String year;
 	
 	@OneToMany(mappedBy="season")
 	@JsonIgnore
 	private Set<Team> teams;
 	
-	@Column(nullable=false)
+	@Column(name="completed", nullable=false)
 	private boolean completed;
 	
 	@OneToOne(cascade=CascadeType.ALL)

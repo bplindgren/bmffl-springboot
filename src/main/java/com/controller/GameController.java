@@ -27,11 +27,6 @@ public class GameController {
 		return gameService.getGames();
 	}
 	
-	@GetMapping("/{id}")
-	public Game getGameByID(@PathVariable int id) throws Exception {
-		return gameService.getGameByID(id);
-	}
-	
 	@GetMapping("/gametype/{gameType}")
 	public List<Game> getGamesByGameType(@PathVariable String gameType) throws Exception {
 		return gameService.getGamesByGameType(gameType);
@@ -40,11 +35,6 @@ public class GameController {
 	@GetMapping("/team/{teamId}")
 	public List<Game> getGamesByTeamID(@PathVariable int teamId) throws Exception {
 		return gameService.getGamesByTeamId(teamId);
-	}
-	
-	@GetMapping("/recent")
-	public List<Game> getRecentGames() throws Exception {
-		return gameService.getRecentGames();
 	}
 	
 	@GetMapping("/season/{seasonId}/week/{weekId}")

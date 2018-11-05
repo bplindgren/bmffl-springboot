@@ -1,39 +1,70 @@
 package com.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="mv_owner_seasons")
 public class OwnerSeasons {
 	
-	private int ownerId;
-	private String firstSeason;
-	private String lastSeason;
+	@Id
+	@Column(name="id", nullable=false)
+	private int id;
 	
-	public OwnerSeasons(int ownerId, String firstSeason, String lastSeason) {
-		this.ownerId = ownerId;
-		this.firstSeason = firstSeason;
-		this.lastSeason = lastSeason;
+	@Column(name="owner_Id", nullable=false)
+	private int owner_Id;
+	
+	@Column(name="name", nullable=false)
+	private String name;
+
+	@Column(name="season_Id", nullable=false)
+	private String season_Id;
+
+	@Column(name="year", nullable=false)
+	private String year;
+
+	@Column(name="division", nullable=false)
+	private String division;
+
+	@Column(name="firstname", nullable=false)
+	private String firstname;
+
+	@Column(name="lastinitial", nullable=false)
+	private String lastinitial;
+
+	public int getId() {
+		return id;
 	}
 
-	public int getOwnerId() {
-		return ownerId;
+	public int getOwner_Id() {
+		return owner_Id;
 	}
 
-	public void setOwnerId(int ownerId) {
-		this.ownerId = ownerId;
+	public String getName() {
+		return name;
 	}
 
-	public String getFirstSeason() {
-		return firstSeason;
+	public String getSeason_Id() {
+		return season_Id;
 	}
 
-	public void setFirstSeason(String firstSeason) {
-		this.firstSeason = firstSeason;
+	public String getYear() {
+		return year;
 	}
 
-	public String getLastSeason() {
-		return lastSeason;
+	public String getDivision() {
+		return division;
 	}
 
-	public void setLastSeason(String lastSeason) {
-		this.lastSeason = lastSeason;
+	public String getFirstname() {
+		return firstname;
 	}
+
+	public String getLastinitial() {
+		return lastinitial;
+	}
+	
 	
 }

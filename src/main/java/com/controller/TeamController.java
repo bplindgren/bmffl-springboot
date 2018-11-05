@@ -24,14 +24,14 @@ public class TeamController {
 		this.teamService = teamService;
 	}
 	
+	@GetMapping("")
+	public List<Team> getAllTeams() {
+		return teamService.getAllTeams();
+	}
+	
 	@GetMapping("/{id}")
 	public Team getTeamById(@PathVariable int id) {
 		return teamService.getTeamById(id);
-	}
-	
-	@GetMapping("/all")
-	public List<Team> getAllTeams() {
-		return teamService.getAllTeams();
 	}
 	
 	@GetMapping("/record/{id}/{week}")

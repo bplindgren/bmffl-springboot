@@ -32,28 +32,8 @@ public class SeasonController {
 	}	
 	
 	@GetMapping("/getOwnerSeasons/{owner_id}")
-	public OwnerSeasons getOwnerSeasons(@PathVariable String owner_id) {
+	public List<OwnerSeasons> getOwnerSeasons(@PathVariable String owner_id) {
 		return seasonService.getOwnerSeasons(owner_id);
-	}
-
-	@GetMapping("/{year}")
-	public Season getSeason(@PathVariable String year) {
-		return seasonService.getSeason(year);
-	}
-	
-	@GetMapping("/{year}/games")
-	public List<Game> getSeasonGames(@PathVariable String year) {
-		return seasonService.getSeasonGames(year);
-	}
-	
-	@GetMapping("/{year}/teams")
-	public List<Team> getSeasonTeams(@PathVariable String year) {
-		return seasonService.getSeasonTeams(year);
-	}
-	
-	@GetMapping("/{year}/owners")
-	public List<Owner> getSeasonOwners(@PathVariable String year) {
-		return seasonService.getSeasonOwners(year);
 	}
 
 }

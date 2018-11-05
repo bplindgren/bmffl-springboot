@@ -38,6 +38,8 @@ public class TeamService implements Serializable {
 		return teamRepo.findById(id);
 	}
 
+	// Have to use this stored procedure to get the record for a week.
+	// These aren't being stored in a view
 	public Record getWeekRecord(String id, String week) {
 		Long long_id = Long.parseLong(id);
 		Long long_week = Long.parseLong(week);
@@ -63,10 +65,7 @@ public class TeamService implements Serializable {
 	}
 	
 	public List<SeasonStats> getOwnerTeamsSeasonStats(int ownerId) {
-//	  List<SeasonStats> stats = em.createQuery("SELECT wins FROM bmffl.vw_season_stats", SeasonStats.class).getResultList();
-		List<SeasonStats> s = seasonStatsRepo.findByOwnerId(ownerId);
-		System.out.println(s);
-		return s;
+		return seasonStatsRepo.findByOwnerId(ownerId);
 	}
 	
 }
