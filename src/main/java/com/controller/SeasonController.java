@@ -17,7 +17,7 @@ import com.service.SeasonService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("season")
+@RequestMapping("seasons")
 public class SeasonController {
 
 	private SeasonService seasonService;

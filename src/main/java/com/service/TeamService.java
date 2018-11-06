@@ -11,6 +11,7 @@ import javax.persistence.StoredProcedureQuery;
 import org.springframework.stereotype.Service;
 
 import com.entity.Record;
+import com.entity.Season;
 import com.entity.SeasonStats;
 import com.entity.Team;
 import com.repository.SeasonStatsRepository;
@@ -66,6 +67,10 @@ public class TeamService implements Serializable {
 	
 	public List<SeasonStats> getOwnerTeamsSeasonStats(int ownerId) {
 		return seasonStatsRepo.findByOwnerId(ownerId);
+	}
+
+	public List<SeasonStats> getSeasonTeams(int seasonId) {
+		return seasonStatsRepo.findBySeasonId(seasonId);
 	}
 	
 }

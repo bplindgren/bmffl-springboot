@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.Record;
+import com.entity.Season;
 import com.entity.SeasonStats;
 import com.entity.Team;
 import com.service.TeamService;
@@ -47,6 +48,11 @@ public class TeamController {
 	@GetMapping("/owner/stats/{owner_id}")
 	public List<SeasonStats> getOwnerTeamsSeasonStats(@PathVariable int owner_id) {
 		return teamService.getOwnerTeamsSeasonStats(owner_id);
+	}
+	
+	@GetMapping("/getSeasonTeams/{season_id}")
+	public List<SeasonStats> getSeasonTeams(@PathVariable int season_id) {
+		return teamService.getSeasonTeams(season_id);
 	}
 	
 }
