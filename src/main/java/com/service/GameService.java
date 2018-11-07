@@ -20,22 +20,12 @@ public class GameService {
 		return gameRepo.findAll();
 	}
 	
-	public Game getGameByID(int id) {
-		return gameRepo.findById(id);
-	}
-	
 	public List<Game> getGamesByGameType(String gameType) {
 		return gameRepo.findByGameType(gameType);
 	}
 	
 	public List<Game> getGamesByTeamId(int id) {
-		List<Game> games = gameRepo.findByHomeTeamIdOrAwayTeamId(id, id);
-		System.out.println(games.size());
-		return games;
-	}
-	
-	public List<Game> getRecentGames() {
-		return gameRepo.findTop5ByOrderByIdDesc();
+		return gameRepo.findByHomeTeamIdOrAwayTeamId(id, id);
 	}
 	
 	public List<Game> getWeekGames(String seasonId, String weekId) {

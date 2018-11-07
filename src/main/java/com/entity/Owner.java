@@ -50,24 +50,12 @@ public class Owner {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
 	public String getLastInitial() {
 		return lastInitial;
-	}
-
-	public void setLastInitial(String lastInitial) {
-		this.lastInitial = lastInitial;
 	}
 	
 	public String getDivision() {
 		return division;
-	}
-
-	public void setDivision(String division) {
-		this.division = division;
 	}
 
 	public List<Team> getTeams() {

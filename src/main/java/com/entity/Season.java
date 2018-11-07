@@ -20,21 +20,21 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="seasons")
-@NamedStoredProcedureQuery(
-	name = "get_owner_seasons", 
-	procedureName = "get_owner_seasons",
-	parameters = {
-		@StoredProcedureParameter(
-			mode = ParameterMode.IN,
-			name = "owner_",
-			type = Integer.class)
-	}
-)
+//@NamedStoredProcedureQuery(
+//	name = "get_owner_seasons", 
+//	procedureName = "get_owner_seasons",
+//	parameters = {
+//		@StoredProcedureParameter(
+//			mode = ParameterMode.IN,
+//			name = "owner_",
+//			type = Integer.class)
+//	}
+//)
 public class Season {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id", nullable=false)
+	@Column(nullable=false)
 	private int id;
 	
 	@Column(nullable=false, length=8)
@@ -57,10 +57,6 @@ public class Season {
 
 	public String getYear() {
 		return year;
-	}
-
-	public Set<Team> getTeams() {
-		return teams;
 	}
 	
 	public boolean isCompleted() {

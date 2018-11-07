@@ -35,17 +35,17 @@ public class AllTimeStandingsView {
 	@Column(name="ties", nullable=false)
 	private Long ties;
 	
-	@Column(name="winningPct", nullable=false)
-	private float winningPct;
+	@Column(name="winningpct", nullable=false)
+	private float winningpct;
 	
-	@Column(name="pointsFor", nullable=false)
-	private float pointsFor;
+	@Column(name="pointsfor", nullable=false)
+	private float pointsfor;
 	
-	@Column(name="pointsAgainst", nullable=false)
-	private float pointsAgainst;
+	@Column(name="pointsagainst", nullable=false)
+	private float pointsagainst;
 	
-	@Column(name="pointDifferential", nullable=false)
-	private float pointDifferential;
+	@Column(name="pointdifferential", nullable=false)
+	private float pointdifferential;
 	
 	@Column(name="pfpg", nullable=false)
 	private float pfpg;
@@ -53,8 +53,8 @@ public class AllTimeStandingsView {
 	@Column(name="papg", nullable=false)
 	private float papg;
 	
-	@Column(name="ppgDiff", nullable=false)
-	private float ppgDiff;
+	@Column(name="ppgdiff", nullable=false)
+	private float ppgdiff;
 
 	public int getOwnerId() {
 		return ownerId;
@@ -84,20 +84,20 @@ public class AllTimeStandingsView {
 		return ties;
 	}
 
-	public float getWinningPct() {
-		return winningPct;
+	public float getWinningpct() {
+		return winningpct;
 	}
 
-	public float getPointsFor() {
-		return pointsFor;
+	public float getPointsfor() {
+		return pointsfor;
 	}
 
-	public float getPointsAgainst() {
-		return pointsAgainst;
+	public float getPointsagainst() {
+		return pointsagainst;
 	}
 
-	public float getPointDifferential() {
-		return pointDifferential;
+	public float getPointdifferential() {
+		return pointdifferential;
 	}
 
 	public float getPfpg() {
@@ -107,9 +107,9 @@ public class AllTimeStandingsView {
 	public float getPapg() {
 		return papg;
 	}
-	
-	public float getPpgDiff() {
-		return ppgDiff;
-	}	
+
+	public float getPpgdiff() {
+		return ppgdiff;
+	}
 	
 }

@@ -69,6 +69,9 @@ public class SeasonStats {
 	
 	@Column(name="ppgdiff", nullable=false)
 	private Float ppgdiff;
+	
+	@Column(name="season_id", nullable=false)
+	private Integer seasonId;
 
 	public Integer getId() {
 		return id;
@@ -148,6 +151,10 @@ public class SeasonStats {
 
 	public Float getPpgdiff() {
 		return ppgdiff;
+	}
+
+	public Integer getSeasonId() {
+		return seasonId;
 	}
 	
 }
