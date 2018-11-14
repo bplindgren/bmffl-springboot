@@ -32,10 +32,10 @@ public class SeasonStats {
 	private String name;
 	
 	@Column(name="pointsagainst", nullable=false)
-	private Integer pointsagainst;
+	private Float pointsagainst;
 	
 	@Column(name="pointsfor", nullable=false)
-	private Integer pointsfor;
+	private Float pointsfor;
 	
 	@Column(name="standing", nullable=false)
 	private Integer standing;
@@ -72,6 +72,9 @@ public class SeasonStats {
 	
 	@Column(name="season_id", nullable=false)
 	private Integer seasonId;
+	
+	@Column(name="division", nullable=false)
+	private String division;
 
 	public Integer getId() {
 		return id;
@@ -101,11 +104,11 @@ public class SeasonStats {
 		return name;
 	}
 
-	public Integer getPointsagainst() {
+	public Float getPointsagainst() {
 		return pointsagainst;
 	}
 
-	public Integer getPointsfor() {
+	public Float getPointsfor() {
 		return pointsfor;
 	}
 
@@ -155,6 +158,10 @@ public class SeasonStats {
 
 	public Integer getSeasonId() {
 		return seasonId;
+	}
+	
+	public String getDivision() {
+		return division;
 	}
 	
 }

@@ -41,6 +41,11 @@ public class GameController {
 	public List<Game> getGamesBySeasonAndWeek(@PathVariable String seasonId, @PathVariable String weekId) {
 		return gameService.getWeekGames(seasonId, weekId);
 	}
+	
+	@GetMapping("/season/playoffs/{seasonId}")
+	public List<Game> getSeasonPlayoffGames(@PathVariable int seasonId) {
+		return gameService.getSeasonPlayoffGames(seasonId);
+	}
 
 }
 

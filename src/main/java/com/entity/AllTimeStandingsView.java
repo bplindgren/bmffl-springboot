@@ -9,7 +9,7 @@ import javax.persistence.Table;
 // The table is the View !!!!!!
 // A new table will be created if db is dropped and rebuilt.
 // Otherwise, it's looking at the view
-@Table(name="all_time_standings_view")
+@Table(name="vw_all_time_standings")
 // The response from the API creates this object
 public class AllTimeStandingsView {
 
