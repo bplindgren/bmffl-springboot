@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -32,6 +33,22 @@ public class GameService {
 		int season = Integer.parseInt(seasonId)-2010;
 		int week = Integer.parseInt(weekId);
 		return gameRepo.findBySeasonIdAndWeek(season, week);
+	}
+	
+	public List<Game> getSeasonPlayoffGames(int seasonId) {
+		String qf = "Quarter Final";
+		String sf = "Semi Final";
+		String sb = "Super Bowl";
+		List<Game> quarters = gameRepo.findBySeasonIdAndGameType(seasonId, qf);
+		List<Game> semis = gameRepo.findBySeasonIdAndGameType(seasonId, sf);
+		List<Game> superBowl = gameRepo.findBySeasonIdAndGameType(seasonId, sb);
+		
+		List<Game> fullList = new ArrayList<Game>();
+		fullList.addAll(quarters);
+		fullList.addAll(semis);
+		fullList.addAll(superBowl);
+		
+		return fullList;
 	}
 	
 }

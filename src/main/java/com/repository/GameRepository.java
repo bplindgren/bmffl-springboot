@@ -14,5 +14,7 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 	List<Game> findByHomeTeamIdOrAwayTeamId(int homeId, int awayId);
 	
 	List<Game> findBySeasonIdAndWeek(int seasonId, int week);
+	
+	List<Game> findBySeasonIdAndGameType(int seasonId, String gameType);
 }
 	

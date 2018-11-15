@@ -44,6 +44,11 @@ public class TeamController {
 	public List<Team> getOwnerTeams(@PathVariable int owner_id) {
 		return teamService.getOwnerTeams(owner_id);
 	}
+
+	@GetMapping("/seasonStats")
+	public List<SeasonStats> getOwnerTeamsSeasonStats() {
+		return teamService.getAllTeamsSeasonStats();
+	}
 	
 	@GetMapping("/owner/stats/{owner_id}")
 	public List<SeasonStats> getOwnerTeamsSeasonStats(@PathVariable int owner_id) {

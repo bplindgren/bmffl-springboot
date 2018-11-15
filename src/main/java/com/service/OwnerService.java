@@ -31,7 +31,7 @@ public class OwnerService {
 		return atsRepo.findByOwnerId(id);
 	}
 	
-	public List<AllTimeStandingsView> getAllTimeRecords() {
+	public List<AllTimeStandingsView> getAllTimeStats() {
 		return atsRepo.findAll();
 	}	
 	

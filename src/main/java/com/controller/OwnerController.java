@@ -38,10 +38,9 @@ public class OwnerController {
 		return ownerService.getOwnerAllTimeStats(id);
 	}
 	
-	@GetMapping("getAllTimeRecords")
-	public List<AllTimeStandingsView> getAllTimeRecord() {
-		System.out.println("getting all records");
-		return ownerService.getAllTimeRecords();
+	@GetMapping("getAllTimeStats")
+	public List<AllTimeStandingsView> getAllTimeStats() {
+		return ownerService.getAllTimeStats();
 	}
 	
 }
