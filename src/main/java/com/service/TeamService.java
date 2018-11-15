@@ -65,6 +65,10 @@ public class TeamService implements Serializable {
 		return teamRepo.findByOwnerId(owner_id);
 	}
 	
+	public List<SeasonStats> getAllTeamsSeasonStats() {
+		return seasonStatsRepo.findAll();
+	}
+	
 	public List<SeasonStats> getOwnerTeamsSeasonStats(int ownerId) {
 		return seasonStatsRepo.findByOwnerId(ownerId);
 	}
