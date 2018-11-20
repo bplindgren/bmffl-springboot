@@ -33,17 +33,17 @@ public class GameController {
 	}
 	
 	@GetMapping("/team/{teamId}")
-	public List<Game> getGamesByTeamID(@PathVariable int teamId) throws Exception {
+	public List<Game> getGamesByTeamID(@PathVariable long teamId) throws Exception {
 		return gameService.getGamesByTeamId(teamId);
 	}
 	
-	@GetMapping("/season/{seasonId}/week/{weekId}")
-	public List<Game> getGamesBySeasonAndWeek(@PathVariable String seasonId, @PathVariable String weekId) {
-		return gameService.getWeekGames(seasonId, weekId);
+	@GetMapping("/season/{seasonId}/week/{week}")
+	public List<Game> getGamesBySeasonAndWeek(@PathVariable long seasonId, @PathVariable int week) {
+		return gameService.getWeekGames(seasonId, week);
 	}
 	
 	@GetMapping("/season/playoffs/{seasonId}")
-	public List<Game> getSeasonPlayoffGames(@PathVariable int seasonId) {
+	public List<Game> getSeasonPlayoffGames(@PathVariable long seasonId) {
 		return gameService.getSeasonPlayoffGames(seasonId);
 	}
 

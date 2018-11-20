@@ -11,16 +11,16 @@ public class OwnerSeasons {
 	
 	@Id
 	@Column(name="id", nullable=false)
-	private int id;
+	private long id;
 	
-	@Column(name="owner_Id", nullable=false)
-	private int owner_Id;
+	@Column(name="ownerId", nullable=false)
+	private int ownerId;
 	
 	@Column(name="name", nullable=false)
 	private String name;
 
-	@Column(name="season_Id", nullable=false)
-	private String season_Id;
+	@Column(name="seasonId", nullable=false)
+	private int seasonId;
 
 	@Column(name="year", nullable=false)
 	private String year;
@@ -34,20 +34,20 @@ public class OwnerSeasons {
 	@Column(name="lastinitial", nullable=false)
 	private String lastinitial;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public int getOwner_Id() {
-		return owner_Id;
+	public int getOwnerId() {
+		return ownerId;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public String getSeason_Id() {
-		return season_Id;
+	public int getSeasonId() {
+		return seasonId;
 	}
 
 	public String getYear() {

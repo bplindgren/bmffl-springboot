@@ -35,7 +35,7 @@ public class Season {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable=false)
-	private int id;
+	private long id;
 	
 	@Column(nullable=false, length=8)
 	private String year;
@@ -51,7 +51,7 @@ public class Season {
 	@JoinColumn(nullable=true)
 	private Team champion;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

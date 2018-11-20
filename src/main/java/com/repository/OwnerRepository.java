@@ -16,5 +16,5 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
 	
 	List<Owner> findByDivision(String division);
 
-	Owner findById(Integer id);
+	Owner findById(long id);
 }

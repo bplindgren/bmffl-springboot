@@ -42,7 +42,7 @@ public class Team implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id", nullable=false)
-	private int id;
+	private long id;
 
 	@Column(nullable=false, length=64)
 	private String name;
@@ -66,7 +66,7 @@ public class Team implements Serializable {
 	private String division;
 	
 	@Column(nullable=true, length=1)
-	private Integer standing;
+	private int standing;
 	
 	@Column(nullable=true, length=2)
 	private int gamesPlayed;
@@ -90,7 +90,7 @@ public class Team implements Serializable {
 	private String divisionWinner;
 	
 	@Column(nullable=true, length=8)
-	private String champion;
+	private boolean champion;
 	
 	@Column(nullable=true, length=8)
 	private float pointsFor;
@@ -106,7 +106,7 @@ public class Team implements Serializable {
 	@JsonIgnore
 	private List<Game> awayGames;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -134,7 +134,7 @@ public class Team implements Serializable {
 		return division;
 	}
 
-	public Integer getStanding() {
+	public int getStanding() {
 		return standing;
 	}
 
@@ -166,7 +166,7 @@ public class Team implements Serializable {
 		return divisionWinner;
 	}
 
-	public String getChampion() {
+	public boolean getChampion() {
 		return champion;
 	}
 

@@ -10,8 +10,8 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
 
 	List<Team> findAll();
 	
-	List<Team> findByOwnerId(int id);
+	List<Team> findByOwnerId(long id);
 	
-	Team findById(int id);
+	Team findById(long id);
 	
 }

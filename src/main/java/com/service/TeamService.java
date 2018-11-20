@@ -35,21 +35,21 @@ public class TeamService implements Serializable {
 		return teamRepo.findAll();
 	}
 	
-	public Team getTeamById(int id) {
+	public Team getTeamById(long id) {
 		return teamRepo.findById(id);
 	}
 
 	// Have to use this stored procedure to get the record for a week.
 	// These aren't being stored in a view
-	public Record getWeekRecord(String id, String week) {
-		Long long_id = Long.parseLong(id);
-		Long long_week = Long.parseLong(week);
+	public Record getWeekRecord(Long id, Long week) {
+//		Long long_id = Long.parseLong(id);
+//		Long long_week = Long.parseLong(week);
 		
 		StoredProcedureQuery query = em.createStoredProcedureQuery("get_week_record");
 		query.registerStoredProcedureParameter(1, Long.class, ParameterMode.IN);
 		query.registerStoredProcedureParameter(2, Long.class, ParameterMode.IN);
-		query.setParameter(1, long_id);
-		query.setParameter(2, long_week);
+		query.setParameter(1, id);
+		query.setParameter(2, week);
 		
 		String result = (String) query.getSingleResult();
 		String[] values = result.split("-");
@@ -61,19 +61,23 @@ public class TeamService implements Serializable {
 		return record;
 	}
 	
-	public List<Team> getOwnerTeams(int owner_id) {
-		return teamRepo.findByOwnerId(owner_id);
+	public List<Team> getOwnerTeams(long ownerId) {
+		return teamRepo.findByOwnerId(ownerId);
+	}
+	
+	public SeasonStats getTeamSeasonStats(long teamId) {
+		return seasonStatsRepo.findById(teamId);
 	}
 	
 	public List<SeasonStats> getAllTeamsSeasonStats() {
 		return seasonStatsRepo.findAll();
 	}
 	
-	public List<SeasonStats> getOwnerTeamsSeasonStats(int ownerId) {
+	public List<SeasonStats> getOwnerTeamsSeasonStats(Integer ownerId) {
 		return seasonStatsRepo.findByOwnerId(ownerId);
 	}
 
-	public List<SeasonStats> getSeasonTeams(int seasonId) {
+	public List<SeasonStats> getSeasonTeams(Integer seasonId) {
 		return seasonStatsRepo.findBySeasonId(seasonId);
 	}
 	

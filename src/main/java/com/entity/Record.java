@@ -2,37 +2,37 @@ package com.entity;
 
 public class Record {
 	
-	private Integer wins;
-	private Integer losses;
-	private Integer ties;
+	private int wins;
+	private int losses;
+	private int ties;
 	
-	public Record(Integer wins, Integer losses, Integer ties) {
+	public Record(int wins, int losses, int ties) {
 		this.wins = wins;
 		this.losses = losses;
 		this.ties = ties;
 	}
 
-	public Integer getWins() {
+	public int getWins() {
 		return wins;
 	}
 
-	public void setWins(Integer wins) {
+	public void setWins(int wins) {
 		this.wins = wins;
 	}
 
-	public Integer getLosses() {
+	public int getLosses() {
 		return losses;
 	}
 
-	public void setLosses(Integer losses) {
+	public void setLosses(int losses) {
 		this.losses = losses;
 	}
 
-	public Integer getTies() {
+	public int getTies() {
 		return ties;
 	}
 
-	public void setTies(Integer ties) {
+	public void setTies(int ties) {
 		this.ties = ties;
 	}
 	

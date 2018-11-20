@@ -5,7 +5,7 @@ import com.entity.AllTimeStandingsView;
 
 public interface AllTimeStandingsRepository extends JpaRepository<AllTimeStandingsView, Long> {
 	
-	AllTimeStandingsView findByOwnerId(Integer id);
+	AllTimeStandingsView findByOwnerId(long id);
 	
 	List<AllTimeStandingsView> findAll();
 }

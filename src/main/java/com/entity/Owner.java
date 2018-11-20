@@ -27,7 +27,7 @@ public class Owner {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id", nullable=false)
-	private int id;
+	private long id;
 	
 	@Column(nullable=false, length=8)
 	private String firstName;
@@ -42,7 +42,7 @@ public class Owner {
 	@JsonIgnore
 	private List<Team> teams;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

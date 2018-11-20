@@ -29,12 +29,12 @@ public class OwnerController {
 	}
 	
 	@GetMapping("/{id}")
-	public Owner getOwner(@PathVariable Integer id) {
+	public Owner getOwner(@PathVariable long id) {
 		return ownerService.getOwner(id);
 	}
 	
 	@GetMapping("getOwnerAllTimeStats/{id}")
-	public AllTimeStandingsView getOwnerAllTimeStats(@PathVariable Integer id) {
+	public AllTimeStandingsView getOwnerAllTimeStats(@PathVariable long id) {
 		return ownerService.getOwnerAllTimeStats(id);
 	}
 	

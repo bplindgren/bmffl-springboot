@@ -11,7 +11,7 @@ public class SeasonStats {
 
 	@Id
 	@Column(name="id", nullable=false)
-	public Integer id;
+	public long id;
 	
 	@Column(name="champion", nullable=false)
 	private String champion;
@@ -20,63 +20,63 @@ public class SeasonStats {
 	private String divisionwinner;
 	
 	@Column(name="gamesplayed", nullable=false)
-	private Integer gamesplayed;
+	private int gamesplayed;
 	
 	@Column(name="losses", nullable=false)
-	private Integer losses;
+	private int losses;
 	
 	@Column(name="lossesregseason", nullable=false)
-	private Integer lossesregseason;
+	private int lossesregseason;
 	
 	@Column(name="name", nullable=false)
 	private String name;
 	
 	@Column(name="pointsagainst", nullable=false)
-	private Float pointsagainst;
+	private float pointsagainst;
 	
 	@Column(name="pointsfor", nullable=false)
-	private Float pointsfor;
+	private float pointsfor;
 	
 	@Column(name="standing", nullable=false)
-	private Integer standing;
+	private int standing;
 	
 	@Column(name="ties", nullable=false)
-	private Integer ties;
+	private int ties;
 	
 	@Column(name="wins", nullable=false)
-	private Integer wins;
+	private int wins;
 	
 	@Column(name="winsregseason", nullable=false)
-	private Integer winsregseason;
+	private int winsregseason;
 	
 	@Column(name="year", nullable=false)
 	private String year;
 	
 	@Column(name="owner_id", nullable=false)
-	private Integer ownerId;
+	private int ownerId;
 	
 	@Column(name="winningpct", nullable=false)
-	private Float winningpct;
+	private float winningpct;
 	
 	@Column(name="pointdifferential", nullable=false)
-	private Float pointdifferential;
+	private float pointdifferential;
 	
 	@Column(name="pfpg", nullable=false)
-	private Float pfpg;
+	private float pfpg;
 	
 	@Column(name="papg", nullable=false)
-	private Float papg;
+	private float papg;
 	
 	@Column(name="ppgdiff", nullable=false)
-	private Float ppgdiff;
+	private float ppgdiff;
 	
 	@Column(name="season_id", nullable=false)
-	private Integer seasonId;
+	private int seasonId;
 	
 	@Column(name="division", nullable=false)
 	private String division;
 
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -88,15 +88,15 @@ public class SeasonStats {
 		return divisionwinner;
 	}
 
-	public Integer getGamesplayed() {
+	public int getGamesplayed() {
 		return gamesplayed;
 	}
 
-	public Integer getLosses() {
+	public int getLosses() {
 		return losses;
 	}
 
-	public Integer getLossesregseason() {
+	public int getLossesregseason() {
 		return lossesregseason;
 	}
 
@@ -104,27 +104,27 @@ public class SeasonStats {
 		return name;
 	}
 
-	public Float getPointsagainst() {
+	public float getPointsagainst() {
 		return pointsagainst;
 	}
 
-	public Float getPointsfor() {
+	public float getPointsfor() {
 		return pointsfor;
 	}
 
-	public Integer getStanding() {
+	public int getStanding() {
 		return standing;
 	}
 
-	public Integer getTies() {
+	public int getTies() {
 		return ties;
 	}
 
-	public Integer getWins() {
+	public int getWins() {
 		return wins;
 	}
 
-	public Integer getWinsregseason() {
+	public int getWinsregseason() {
 		return winsregseason;
 	}
 
@@ -132,34 +132,34 @@ public class SeasonStats {
 		return year;
 	}
 
-	public Integer getOwnerId() {
+	public int getOwnerId() {
 		return ownerId;
 	}
 
-	public Float getWinningpct() {
+	public float getWinningpct() {
 		return winningpct;
 	}
 
-	public Float getPointdifferential() {
+	public float getPointdifferential() {
 		return pointdifferential;
 	}
 
-	public Float getPfpg() {
+	public float getPfpg() {
 		return pfpg;
 	}
 
-	public Float getPapg() {
+	public float getPapg() {
 		return papg;
 	}
 
-	public Float getPpgdiff() {
+	public float getPpgdiff() {
 		return ppgdiff;
 	}
 
-	public Integer getSeasonId() {
+	public int getSeasonId() {
 		return seasonId;
 	}
-	
+
 	public String getDivision() {
 		return division;
 	}
