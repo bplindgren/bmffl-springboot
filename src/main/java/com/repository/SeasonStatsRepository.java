@@ -11,7 +11,10 @@ public interface SeasonStatsRepository extends JpaRepository<SeasonStats, Long> 
 	
 	List<SeasonStats> findAll();
 	
-	List<SeasonStats> findByOwnerId(int id);
+	SeasonStats findById(long id); 
+	
+	List<SeasonStats> findByOwnerId(Integer id);
 
-	List<SeasonStats> findBySeasonId(int id);
+	List<SeasonStats> findBySeasonId(Integer id);
+	
 }

@@ -15,7 +15,7 @@ public class AllTimeStandingsView {
 
 	@Id
 	@Column(name="ownerId", nullable=false)
-	private int ownerId;
+	private long ownerId;
 	
 	@Column(name="firstname", nullable=false)
 	private String firstname;
@@ -24,16 +24,16 @@ public class AllTimeStandingsView {
 	private String lastinitial;
 
 	@Column(name="seasons", nullable=false)
-	private Long seasons;
+	private int seasons;
 	
 	@Column(name="wins", nullable=false)
-	private Long wins;
+	private int wins;
 	
 	@Column(name="losses", nullable=false)
-	private Long losses;
+	private int losses;
 	
 	@Column(name="ties", nullable=false)
-	private Long ties;
+	private int ties;
 	
 	@Column(name="winningpct", nullable=false)
 	private float winningpct;
@@ -56,7 +56,7 @@ public class AllTimeStandingsView {
 	@Column(name="ppgdiff", nullable=false)
 	private float ppgdiff;
 
-	public int getOwnerId() {
+	public long getOwnerId() {
 		return ownerId;
 	}
 
@@ -68,19 +68,19 @@ public class AllTimeStandingsView {
 		return lastinitial;
 	}
 
-	public Long getSeasons() {
+	public int getSeasons() {
 		return seasons;
 	}
 
-	public Long getWins() {
+	public int getWins() {
 		return wins;
 	}
 
-	public Long getLosses() {
+	public int getLosses() {
 		return losses;
 	}
 
-	public Long getTies() {
+	public int getTies() {
 		return ties;
 	}
 

@@ -25,17 +25,16 @@ public class GameService {
 		return gameRepo.findByGameType(gameType);
 	}
 	
-	public List<Game> getGamesByTeamId(int id) {
+	public List<Game> getGamesByTeamId(long id) {
 		return gameRepo.findByHomeTeamIdOrAwayTeamId(id, id);
 	}
 	
-	public List<Game> getWeekGames(String seasonId, String weekId) {
-		int season = Integer.parseInt(seasonId)-2010;
-		int week = Integer.parseInt(weekId);
+	public List<Game> getWeekGames(long seasonId, int week) {
+		long season = seasonId-2010;
 		return gameRepo.findBySeasonIdAndWeek(season, week);
 	}
 	
-	public List<Game> getSeasonPlayoffGames(int seasonId) {
+	public List<Game> getSeasonPlayoffGames(long seasonId) {
 		String qf = "Quarter Final";
 		String sf = "Semi Final";
 		String sb = "Super Bowl";

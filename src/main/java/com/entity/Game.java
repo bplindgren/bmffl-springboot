@@ -21,7 +21,7 @@ public class Game {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id", nullable=false)
-	private int id;
+	private long id;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(nullable=false)
@@ -51,7 +51,7 @@ public class Game {
 	@Column(nullable=false)
 	private boolean completed;
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

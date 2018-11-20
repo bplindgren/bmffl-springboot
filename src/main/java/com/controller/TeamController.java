@@ -36,13 +36,18 @@ public class TeamController {
 	}
 	
 	@GetMapping("/record/{id}/{week}")
-	public Record getTeamRecord(@PathVariable String id, @PathVariable String week) {
+	public Record getTeamRecord(@PathVariable Long id, @PathVariable Long week) {
 		return teamService.getWeekRecord(id, week);
 	}
 	
-	@GetMapping("/owner/{owner_id}")
-	public List<Team> getOwnerTeams(@PathVariable int owner_id) {
-		return teamService.getOwnerTeams(owner_id);
+	@GetMapping("/owner/{ownerId}")
+	public List<Team> getOwnerTeams(@PathVariable int ownerId) {
+		return teamService.getOwnerTeams(ownerId);
+	}
+	
+	@GetMapping("/stats/{teamId}")
+	public SeasonStats getTeamSeasonStats(@PathVariable int teamId) {
+		return teamService.getTeamSeasonStats(teamId);
 	}
 
 	@GetMapping("/seasonStats")
@@ -50,14 +55,14 @@ public class TeamController {
 		return teamService.getAllTeamsSeasonStats();
 	}
 	
-	@GetMapping("/owner/stats/{owner_id}")
-	public List<SeasonStats> getOwnerTeamsSeasonStats(@PathVariable int owner_id) {
-		return teamService.getOwnerTeamsSeasonStats(owner_id);
+	@GetMapping("/owner/stats/{ownerId}")
+	public List<SeasonStats> getOwnerTeamsSeasonStats(@PathVariable Integer ownerId) {
+		return teamService.getOwnerTeamsSeasonStats(ownerId);
 	}
 	
-	@GetMapping("/getSeasonTeams/{season_id}")
-	public List<SeasonStats> getSeasonTeams(@PathVariable int season_id) {
-		return teamService.getSeasonTeams(season_id);
+	@GetMapping("/getSeasonTeams/{seasonId}")
+	public List<SeasonStats> getSeasonTeams(@PathVariable Integer seasonId) {
+		return teamService.getSeasonTeams(seasonId);
 	}
 	
 }

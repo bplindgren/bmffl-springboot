@@ -23,11 +23,11 @@ public class OwnerService {
 		return ownerRepo.findAll();
 	}
 	
-	public Owner getOwner(Integer id) {
+	public Owner getOwner(long id) {
 		return ownerRepo.findById(id);
 	}
 	
-	public AllTimeStandingsView getOwnerAllTimeStats(Integer id) {
+	public AllTimeStandingsView getOwnerAllTimeStats(long id) {
 		return atsRepo.findByOwnerId(id);
 	}
 	
