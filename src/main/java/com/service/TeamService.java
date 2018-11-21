@@ -11,7 +11,6 @@ import javax.persistence.StoredProcedureQuery;
 import org.springframework.stereotype.Service;
 
 import com.entity.Record;
-import com.entity.Season;
 import com.entity.SeasonStats;
 import com.entity.Team;
 import com.repository.SeasonStatsRepository;
@@ -41,10 +40,7 @@ public class TeamService implements Serializable {
 
 	// Have to use this stored procedure to get the record for a week.
 	// These aren't being stored in a view
-	public Record getWeekRecord(Long id, Long week) {
-//		Long long_id = Long.parseLong(id);
-//		Long long_week = Long.parseLong(week);
-		
+	public Record getWeekRecord(Long id, Long week) {		
 		StoredProcedureQuery query = em.createStoredProcedureQuery("get_week_record");
 		query.registerStoredProcedureParameter(1, Long.class, ParameterMode.IN);
 		query.registerStoredProcedureParameter(2, Long.class, ParameterMode.IN);
