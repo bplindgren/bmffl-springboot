@@ -9,13 +9,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OneToOne;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name="games")
+@NamedStoredProcedureQuery(
+	name = "get_matchup_games",
+	procedureName = "get_matchup_games",
+	parameters = {
+		@StoredProcedureParameter(
+			mode = ParameterMode.IN,
+			name = "owner1",
+			type = Long.class),
+		@StoredProcedureParameter(
+			mode = ParameterMode.IN,
+			name = "owner2",
+			type = Long.class)
+	}
+)
 public class Game {
 
 	@Id
