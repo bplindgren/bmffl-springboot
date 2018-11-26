@@ -90,37 +90,36 @@ public class GameService {
 		float o2points = 0;
 		
 		for (Game g : matchupGames) {
-			Team winner = null;
-			try {
-				winner = g.getWinner();
-				
-				if (winner.getOwner().getId() == owner1Id) {
-					o1wins+=1;
-				} else if (winner.getOwner().getId() == owner2Id) {
-					o2wins+=1;
-				} 
-				
-				if (g.getAwayTeam().getId() == owner1Id) {
+			if (g.isCompleted() == true) {
+				Team winner = null;
+				try {
+					winner = g.getWinner();
+					
+					if (winner.getOwner().getId() == owner1Id) {
+						o1wins+=1;
+					} else if (winner.getOwner().getId() == owner2Id) {
+						o2wins+=1;
+					} 
+					
+					if (g.getAwayTeam().getId() == owner1Id) {
+						o1points+=g.getAwayScore();
+						o2points+=g.getHomeScore();
+					} else {
+						o2points+=g.getAwayScore();
+						o1points+=g.getHomeScore();				
+					}
+					
+				} catch (Exception e) {
+					String s = "hi";
+					System.out.println(s);
+					ties+=1;
 					o1points+=g.getAwayScore();
 					o2points+=g.getHomeScore();
-				} else {
-					o2points+=g.getAwayScore();
-					o1points+=g.getHomeScore();				
-				}
-				
-			} catch (Exception e) {
-				String s = "hi";
-				System.out.println(s);
-				ties+=1;
-				o1points+=g.getAwayScore();
-				o2points+=g.getHomeScore();
-				
-			} 
-			
+				} 
+			}
 		}
 		
 		MatchupStats matchupStats = new MatchupStats(matchupGames, o1wins, o2wins, ties, o1points, o2points);
-		
 		return matchupStats;
 	}
 	
