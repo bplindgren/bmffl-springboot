@@ -44,6 +44,4 @@ public class MatchupStats {
 		return o2points;
 	}
 	
-	
-	
 }
