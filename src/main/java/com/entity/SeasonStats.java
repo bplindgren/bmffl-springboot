@@ -14,7 +14,7 @@ public class SeasonStats {
 	public long id;
 	
 	@Column(name="champion", nullable=false)
-	private String champion;
+	private Boolean champion;
 	
 	@Column(name="divisionwinner", nullable=false)
 	private String divisionwinner;
@@ -80,7 +80,7 @@ public class SeasonStats {
 		return id;
 	}
 
-	public String getChampion() {
+	public Boolean getChampion() {
 		return champion;
 	}
 
