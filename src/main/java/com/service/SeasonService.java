@@ -20,22 +20,19 @@ public class SeasonService {
 	private SeasonRepository seasonRepo;
 	@PersistenceContext
 	private EntityManager em;
-	private OwnerSeasonsRepository ownerSeasonsRepo;
+//	private OwnerSeasonsRepository ownerSeasonsRepo;
 
-	public SeasonService(SeasonRepository seasonRepo, OwnerSeasonsRepository ownerSeasonsRepo) {
+	public SeasonService(SeasonRepository seasonRepo) {
 		this.seasonRepo = seasonRepo;
-		this.ownerSeasonsRepo = ownerSeasonsRepo;
 	}
 	
 	public List<Season> getSeasons() {
 		return seasonRepo.findAll();
 	}
 	
-	public List<OwnerSeasons> getOwnerSeasons(String owner_id) {
-		int ownerId = Integer.parseInt(owner_id);
-		System.out.println(ownerId);
-		return ownerSeasonsRepo.findById(ownerId);
-	}
+//	public List<OwnerSeasons> getOwnerSeasons(Long owner_id) {
+//		return ownerSeasonsRepo.findById(ownerId);
+//	}
 	
 //	public OwnerSeasons getOwnerSeasons(String owner_id) {
 //		Integer owner_int = Integer.parseInt(owner_id);

@@ -30,10 +30,5 @@ public class SeasonController {
 	public List<Season> getSeasons() {
 		return seasonService.getSeasons();
 	}	
-	
-	@GetMapping("/getOwnerSeasons/{owner_id}")
-	public List<OwnerSeasons> getOwnerSeasons(@PathVariable String owner_id) {
-		return seasonService.getOwnerSeasons(owner_id);
-	}
 
 }
