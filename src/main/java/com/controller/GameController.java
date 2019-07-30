@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.Game;
 import com.entity.MatchupStats;
+import com.entity.TeamGame;
 import com.service.GameService;
 
 @RestController
@@ -34,7 +35,7 @@ public class GameController {
 	}
 	
 	@GetMapping("/team/{teamId}")
-	public List<Game> getGamesByTeamID(@PathVariable long teamId) throws Exception {
+	public List<TeamGame> getGamesByTeamID(@PathVariable long teamId) throws Exception {
 		return gameService.getGamesByTeamId(teamId);
 	}
 	
