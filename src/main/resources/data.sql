@@ -20,6 +20,10 @@ insert into bmffl.owners (id, firstName, lastInitial, division) values (9, 'Sean
 insert into bmffl.owners (id, firstName, lastInitial, division) values (10, 'Isaac', 'S', 'downstairs');
 insert into bmffl.owners (id, firstName, lastInitial, division) values (11, 'Ryan', 'D', 'upstairs');
 
+insert into bmffl.users (id, username, email, password) values (1, 'bplindgren', 'bplindgren@aol.com', 'password');
+insert into bmffl.users (id, username, email, password) values (2, 'iostrohman', 'iostrohman@aol.com', 'password');
+insert into bmffl.users (id, username, email, password) values (3, 'bigdoski', 'bigdoski@aol.com', 'password');
+
 insert into bmffl.teams (id, abbr, division, name, owner_id, year, season_id) values (1, 'IHH47', 'upstairs', 'Iowa HerkysHeroes47', 1, '2011', 1);
 insert into bmffl.teams (id, abbr, division, name, owner_id, year, season_id) values (2, 'WW', 'downstairs', 'Westside Whales', 2, '2011', 1);
 insert into bmffl.teams (id, abbr, division, name, owner_id, year, season_id) values (3, 'BMN', 'upstairs', 'Bustin'' McNutts', 3, '2011', 1);
