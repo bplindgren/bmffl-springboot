@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.Game;
-import com.entity.MatchupStats;
+import com.entity.MatchupGame;
+//import com.entity.MatchupStats;
 import com.entity.TeamGame;
 import com.service.GameService;
 
@@ -50,7 +51,7 @@ public class GameController {
 	}
 	
 	@GetMapping("/matchup/{owner1Id}/{owner2Id}")
-	public MatchupStats getMatchupStats(@PathVariable long owner1Id, @PathVariable long owner2Id) {
+	public List<MatchupGame> getMatchupGames(@PathVariable long owner1Id, @PathVariable long owner2Id) {
 		return gameService.getMatchupStats(owner1Id, owner2Id);
 	}
 
