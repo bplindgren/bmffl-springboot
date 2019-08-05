@@ -12,6 +12,7 @@ import javax.persistence.StoredProcedureQuery;
 import org.springframework.stereotype.Service;
 
 import com.entity.Game;
+import com.entity.MatchupGame;
 import com.entity.MatchupStats;
 import com.entity.Owner;
 import com.entity.Team;
@@ -85,8 +86,8 @@ public class GameService {
 				String fullStreak = lastResult + String.valueOf(streak);
 
 				TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
-						opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w, l,
-						t, fullStreak);
+						opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
+						l, t, fullStreak);
 				teamGames.add(teamGame);
 			} else {
 				float teamScore = g.getAwayScore();
@@ -122,8 +123,8 @@ public class GameService {
 				String fullStreak = lastResult + String.valueOf(streak);
 
 				TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
-						opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w, l,
-						t, fullStreak);
+						opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
+						l, t, fullStreak);
 				teamGames.add(teamGame);
 			}
 		}
@@ -165,52 +166,44 @@ public class GameService {
 		for (Integer i : gamesIDlist) {
 			long l = i.longValue();
 			gamesLong.add(l);
-
 		}
 
 		return gameRepo.findByIdIn(gamesLong);
 	}
 
-	public MatchupStats getMatchupStats(long owner1Id, long owner2Id) {
+	public List<MatchupGame> getMatchupStats(long owner1Id, long owner2Id) {
 		List<Game> matchupGames = this.getMatchupGames(owner1Id, owner2Id);
-		int o1wins = 0;
-		int o2wins = 0;
-		int ties = 0;
-		float o1points = 0;
-		float o2points = 0;
+
+		List<MatchupGame> games = new ArrayList<MatchupGame>();
 
 		for (Game g : matchupGames) {
-			if (g.isCompleted() == true) {
-				Team winner = null;
-				try {
-					winner = g.getWinner();
+			Owner owner1;
+			long awayTeamId = g.getAwayTeam().getOwner().getId();
+			long homeTeamId = g.getHomeTeam().getOwner().getId();
 
-					if (winner.getOwner().getId() == owner1Id) {
-						o1wins += 1;
-					} else if (winner.getOwner().getId() == owner2Id) {
-						o2wins += 1;
-					}
+			String o1team;
+			float o1score;
+			String o2team;
+			float o2score;
 
-					if (g.getAwayTeam().getId() == owner1Id) {
-						o1points += g.getAwayScore();
-						o2points += g.getHomeScore();
-					} else {
-						o2points += g.getAwayScore();
-						o1points += g.getHomeScore();
-					}
-
-				} catch (Exception e) {
-					String s = "hi";
-					System.out.println(s);
-					ties += 1;
-					o1points += g.getAwayScore();
-					o2points += g.getHomeScore();
-				}
+			if (awayTeamId == owner1Id) {
+				o1team = g.getAwayTeam().getName();
+				o1score = g.getAwayScore();
+				o2team = g.getHomeTeam().getName();
+				o2score = g.getHomeScore();
+			} else {
+				o1team = g.getHomeTeam().getName();
+				o1score = g.getHomeScore();
+				o2team = g.getAwayTeam().getName();
+				o2score = g.getAwayScore();
 			}
+			MatchupGame game = new MatchupGame(g.getId(), g.getSeason().getYear(), g.getWeek(), g.getGameType(), o1team,
+					o1score, o2team, o2score, g.isCompleted());
+			games.add(game);
 		}
+		
+		return games;
 
-		MatchupStats matchupStats = new MatchupStats(matchupGames, o1wins, o2wins, ties, o1points, o2points);
-		return matchupStats;
 	}
 
 }
