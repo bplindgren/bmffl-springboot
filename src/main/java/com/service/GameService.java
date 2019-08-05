@@ -166,7 +166,6 @@ public class GameService {
 		for (Integer i : gamesIDlist) {
 			long l = i.longValue();
 			gamesLong.add(l);
-
 		}
 
 		return gameRepo.findByIdIn(gamesLong);
