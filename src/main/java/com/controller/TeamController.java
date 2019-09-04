@@ -2,6 +2,7 @@ package com.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,11 +19,8 @@ import com.service.TeamService;
 @RequestMapping("teams")
 public class TeamController {
 
+	@Autowired
 	private TeamService teamService;
-
-	public TeamController(TeamService teamService) {
-		this.teamService = teamService;
-	}
 	
 	@GetMapping("")
 	public List<Team> getAllTeams() {

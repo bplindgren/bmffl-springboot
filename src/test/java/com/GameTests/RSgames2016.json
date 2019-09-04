@@ -1,0 +1,56 @@
+{
+    "id": 396,
+    "week": 1,
+    "awayTeam": {
+        "id": 57,
+        "name": "Ballz Tech",
+        "abbr": "BT",
+        "owner": {
+            "id": 7,
+            "firstName": "Dan",
+            "lastInitial": "O",
+            "division": "upstairs"
+        },
+        "year": "2016",
+        "division": "upstairs",
+        "standing": 3,
+        "gamesPlayed": 16,
+        "wins": 7,
+        "winsRegSeason": 7,
+        "losses": 9,
+        "lossesRegSeason": 6,
+        "ties": 0,
+        "divisionWinner": null,
+        "champion": false,
+        "pointsFor": 1418.5,
+        "pointsAgainst": 1467.5
+    },
+    "awayScore": 68.5,
+    "homeTeam": {
+        "id": 54,
+        "name": "The Ricky Stanzis",
+        "abbr": "RS",
+        "owner": {
+            "id": 4,
+            "firstName": "Brad",
+            "lastInitial": "L",
+            "division": "upstairs"
+        },
+        "year": "2016",
+        "division": "upstairs",
+        "standing": 1,
+        "gamesPlayed": 15,
+        "wins": 11,
+        "winsRegSeason": 9,
+        "losses": 4,
+        "lossesRegSeason": 4,
+        "ties": 0,
+        "divisionWinner": "outright",
+        "champion": true,
+        "pointsFor": 1549,
+        "pointsAgainst": 1411
+    },
+    "homeScore": 80,
+    "gameType": "Regular Season",
+    "completed": true
+}

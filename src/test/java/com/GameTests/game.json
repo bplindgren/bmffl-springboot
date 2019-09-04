@@ -1,0 +1,56 @@
+{
+    "id": 1,
+    "week": 1,
+    "awayTeam": {
+        "id": 4,
+        "name": "The Ricky Stanzis",
+        "abbr": "RS",
+        "owner": {
+            "id": 4,
+            "firstName": "Brad",
+            "lastInitial": "L",
+            "division": "upstairs"
+        },
+        "year": "2011",
+        "division": "upstairs",
+        "standing": 3,
+        "gamesPlayed": 16,
+        "wins": 8,
+        "winsRegSeason": 7,
+        "losses": 8,
+        "lossesRegSeason": 6,
+        "ties": 0,
+        "divisionWinner": null,
+        "champion": false,
+        "pointsFor": 1376,
+        "pointsAgainst": 1411
+    },
+    "awayScore": 100,
+    "homeTeam": {
+        "id": 2,
+        "name": "Westside Whales",
+        "abbr": "WW",
+        "owner": {
+            "id": 2,
+            "firstName": "Nick",
+            "lastInitial": "D",
+            "division": "downstairs"
+        },
+        "year": "2011",
+        "division": "downstairs",
+        "standing": 1,
+        "gamesPlayed": 15,
+        "wins": 11,
+        "winsRegSeason": 10,
+        "losses": 4,
+        "lossesRegSeason": 3,
+        "ties": 0,
+        "divisionWinner": "outright",
+        "champion": false,
+        "pointsFor": 1369,
+        "pointsAgainst": 1235
+    },
+    "homeScore": 106.5,
+    "gameType": "Regular Season",
+    "completed": true
+}
