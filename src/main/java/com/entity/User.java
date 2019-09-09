@@ -22,6 +22,9 @@ public class User implements Serializable {
 	private long id;
 	
 	@Column(nullable=false)
+	private String name;
+	
+	@Column(nullable=false)
 	private String username;
 	
 	@Column(nullable=false)
@@ -33,6 +36,14 @@ public class User implements Serializable {
 	@Enumerated(EnumType.STRING)
 	@Column(name="role")
 	private Role role;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String getUsername() {
 		return username;

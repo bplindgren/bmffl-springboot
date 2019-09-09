@@ -2,8 +2,6 @@ package com.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -35,7 +33,10 @@ public class UserService {
 		return userRepository.findByUsername(username).orElse(null);
 	}
 	
-	
-	
+	public User save(User user) {
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		userRepository.save(user);
+		return user;
+	}
 
 }
