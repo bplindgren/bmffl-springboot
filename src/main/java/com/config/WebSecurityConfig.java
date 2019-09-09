@@ -35,8 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			// starts authorizing configurations
 			.authorizeRequests()
 			//ignoring the guest's urls "
-			.antMatchers("/resources/**",
-            "/users/**", "/error").permitAll()
+			.antMatchers("/resources/**", "/users/**", "/error").permitAll()
 			//authenticate all remaining URLS
 			.anyRequest().permitAll().and()
 			.logout()
@@ -57,14 +56,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 	}
 	
-//	@Bean
-//	public WebMvcConfigurer corsConfigurer() {
-//		return new WebMvcConfigurer() {
-//			@Override
-//			public void addCorsMappings(CorsRegistry registry) {
-//				registry.addMapping("/**").allowedOrigins("*");
-//			}
-//		};
-//	}
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**").allowedOrigins("*");
+			}
+		};
+	}
 	
 }
