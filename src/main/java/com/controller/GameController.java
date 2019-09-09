@@ -2,6 +2,7 @@ package com.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.Game;
 import com.entity.MatchupGame;
-//import com.entity.MatchupStats;
 import com.entity.TeamGame;
 import com.service.GameService;
 
@@ -19,14 +19,11 @@ import com.service.GameService;
 @RequestMapping("games")
 public class GameController {
 
+	@Autowired
 	private GameService gameService;
-	
-	public GameController(GameService gameService) {
-		this.gameService = gameService;
-	}
 
 	@GetMapping("")
-	public List<Game> getGames() {
+	public List<Game> getGames() throws Exception {
 		return gameService.getGames();
 	}
 	
@@ -41,17 +38,17 @@ public class GameController {
 	}
 	
 	@GetMapping("/season/{seasonId}/week/{week}")
-	public List<Game> getGamesBySeasonAndWeek(@PathVariable long seasonId, @PathVariable int week) {
+	public List<Game> getGamesBySeasonAndWeek(@PathVariable long seasonId, @PathVariable int week) throws Exception {
 		return gameService.getWeekGames(seasonId, week);
 	}
 	
 	@GetMapping("/season/playoffs/{seasonId}")
-	public List<Game> getSeasonPlayoffGames(@PathVariable long seasonId) {
+	public List<Game> getSeasonPlayoffGames(@PathVariable long seasonId) throws Exception {
 		return gameService.getSeasonPlayoffGames(seasonId);
 	}
 	
 	@GetMapping("/matchup/{owner1Id}/{owner2Id}")
-	public List<MatchupGame> getMatchupGames(@PathVariable long owner1Id, @PathVariable long owner2Id) {
+	public List<MatchupGame> getMatchupGames(@PathVariable long owner1Id, @PathVariable long owner2Id) throws Exception {
 		return gameService.getMatchupStats(owner1Id, owner2Id);
 	}
 

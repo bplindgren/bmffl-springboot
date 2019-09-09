@@ -7,24 +7,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 //import javax.persistence.StoredProcedureQuery;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.entity.OwnerSeasons;
 import com.entity.Season;
-import com.repository.OwnerSeasonsRepository;
 import com.repository.SeasonRepository;
 
 @Service
 public class SeasonService {
 
+	@Autowired
 	private SeasonRepository seasonRepo;
 	@PersistenceContext
 	private EntityManager em;
-//	private OwnerSeasonsRepository ownerSeasonsRepo;
-
-	public SeasonService(SeasonRepository seasonRepo) {
-		this.seasonRepo = seasonRepo;
-	}
 	
 	public List<Season> getSeasons() {
 		return seasonRepo.findAll();
