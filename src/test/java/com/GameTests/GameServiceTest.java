@@ -45,15 +45,15 @@ class GameServiceTest {
 		assertEquals(697, numGames);
 	}
 	
-	@Test
-	void getGamesByGameTypeTest() throws IOException {
-		
-	}
-	
-	@Test
-	void getGamesByTeamIdTest() throws IOException, ParseException {
-		
-        
-	}
+//	@Test
+//	void getGamesByGameTypeTest() throws IOException {
+//		
+//	}
+//	
+//	@Test
+//	void getGamesByTeamIdTest() throws IOException, ParseException {
+//		
+//        
+//	}
 
 }
