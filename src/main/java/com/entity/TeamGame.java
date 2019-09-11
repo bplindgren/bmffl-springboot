@@ -1,24 +1,38 @@
 package com.entity;
 
 public class TeamGame {
-	private int week;
-	private String team;
-	private String owner;
-	private String home;
-	private String opposingTeam;
-	private long opposingTeamId;
-	private String opposingOwner;
-	private long opposingOwnerId;
-	private String division;
-	private String result;
-	private float teamScore;
-	private float opponentScore;
-	private String gameType;
-	private short w;
-	private short l;
-	private short t;
-	private String fullStreak;
+	public int week;
+	public String team;
+	public String owner;
+	public String home;
+	public String opposingTeam;
+	public long opposingTeamId;
+	public String opposingOwner;
+	public long opposingOwnerId;
+	public String division;
+	public String result;
+	public float teamScore;
+	public float opponentScore;
+	public String gameType;
+	public short w;
+	public short l;
+	public short t;
+	public String fullStreak;
 	
+	public TeamGame(int week, String team, String owner, String home, String opposingTeam, long opposingTeamId,
+			String opposingOwner, long opposingOwnerId, String division, String gameType) {
+		this.week = week;
+		this.team = team;
+		this.owner = owner;
+		this.home = home;
+		this.opposingTeam = opposingTeam;
+		this.opposingTeamId = opposingTeamId;
+		this.opposingOwner = opposingOwner;
+		this.opposingOwnerId = opposingOwnerId;
+		this.division = division;
+		this.gameType = gameType;
+	}
+
 	public TeamGame(int week, String team, String owner, String home, String opposingTeam, long opposingTeamId,
 			String opposingOwner, long opposingOwnerId, String division, String result,
 			float teamScore, float opponentScore, String gameType, short w, short l, short t, String fullStreak) {

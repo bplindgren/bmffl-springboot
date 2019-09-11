@@ -8,6 +8,7 @@ import javax.persistence.ParameterMode;
 import javax.persistence.PersistenceContext;
 import javax.persistence.StoredProcedureQuery;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.entity.Record;
@@ -20,15 +21,14 @@ import com.repository.TeamRepository;
 public class TeamService implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	@Autowired
 	private TeamRepository teamRepo;
+	@Autowired
+	private SeasonStatsRepository seasonStatsRepo;
+	
 	@PersistenceContext
 	private EntityManager em;
-	private SeasonStatsRepository seasonStatsRepo;
-
-	public TeamService(TeamRepository teamRepo, SeasonStatsRepository seasonStatsRepo) {
-		this.teamRepo = teamRepo;
-		this.seasonStatsRepo = seasonStatsRepo;
-	}
 
 	public List<Team> getAllTeams() {
 		return teamRepo.findAll();

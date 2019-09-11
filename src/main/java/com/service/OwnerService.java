@@ -1,6 +1,8 @@
 package com.service;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.entity.AllTimeStandingsView;
@@ -11,13 +13,10 @@ import com.repository.OwnerRepository;
 @Service
 public class OwnerService {
 
+	@Autowired
 	private OwnerRepository ownerRepo;
+	@Autowired
 	private AllTimeStandingsRepository atsRepo;
-
-	public OwnerService(OwnerRepository ownerRepo, AllTimeStandingsRepository atsRepo) {
-		this.ownerRepo = ownerRepo;
-		this.atsRepo = atsRepo;
-	}
 	
 	public List<Owner> getOwners() {
 		return ownerRepo.findAll();

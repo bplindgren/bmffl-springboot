@@ -35,38 +35,63 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 )
 public class Game {
 
+//	public Game(long id, Season season, int week, Team awayTeam, float awayScore, Team homeTeam, float homeScore,
+//			String gameType, boolean completed) {
+//		this.id = id;
+//		this.season = season;
+//		this.week = week;
+//		this.awayTeam = awayTeam;
+//		this.awayScore = awayScore;
+//		this.homeTeam = homeTeam;
+//		this.homeScore = homeScore;
+//		this.gameType = gameType;
+//		this.completed = completed;
+//	}
+//
+//	public Game(long id, int week, Team awayTeam, float awayScore, Team homeTeam, float homeScore,
+//			String gameType, boolean completed) {
+//		this.id = id;
+//		this.week = week;
+//		this.awayTeam = awayTeam;
+//		this.awayScore = awayScore;
+//		this.homeTeam = homeTeam;
+//		this.homeScore = homeScore;
+//		this.gameType = gameType;
+//		this.completed = completed;
+//	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id", nullable=false)
-	private long id;
+	public long id;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(nullable=false)
 	@JsonIgnore
-	private Season season;
+	public Season season;
 
 	@Column(nullable=false)
-	private int week;
+	public int week;
 
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(nullable=false)
-	private Team awayTeam;
+	public Team awayTeam;
 
 	@Column(nullable=false)
-	private float awayScore;
+	public float awayScore;
 
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(nullable=false)
-	private Team homeTeam;
+	public Team homeTeam;
 
 	@Column(nullable=false)
-	private float homeScore;
+	public float homeScore;
 
 	@Column(nullable=false, length=32)
-	private String gameType;
+	public String gameType;
 
 	@Column(nullable=false)
-	private boolean completed;
+	public boolean completed;
 	
 	public long getId() {
 		return id;
