@@ -20,6 +20,20 @@ public class TeamGame {
 	public String fullStreak;
 	
 	public TeamGame(int week, String team, String owner, String home, String opposingTeam, long opposingTeamId,
+			String opposingOwner, long opposingOwnerId, String division, String gameType) {
+		this.week = week;
+		this.team = team;
+		this.owner = owner;
+		this.home = home;
+		this.opposingTeam = opposingTeam;
+		this.opposingTeamId = opposingTeamId;
+		this.opposingOwner = opposingOwner;
+		this.opposingOwnerId = opposingOwnerId;
+		this.division = division;
+		this.gameType = gameType;
+	}
+
+	public TeamGame(int week, String team, String owner, String home, String opposingTeam, long opposingTeamId,
 			String opposingOwner, long opposingOwnerId, String division, String result,
 			float teamScore, float opponentScore, String gameType, short w, short l, short t, String fullStreak) {
 		this.week = week;

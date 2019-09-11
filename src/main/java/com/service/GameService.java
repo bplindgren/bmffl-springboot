@@ -48,27 +48,6 @@ public class GameService {
 			String isHome = (homeId == id) ? "" : "@";
 
 			if (homeId == id) {
-				float teamScore = g.getHomeScore();
-				float opponentScore = g.getAwayScore();
-				String result;
-				if (teamScore > opponentScore) {
-					result = "W";
-					w++;
-				} else if (teamScore < opponentScore) {
-					result = "L";
-					l++;
-				} else {
-					result = "T";
-					t++;
-				}
-
-				if (result == lastResult) {
-					streak++;
-				} else {
-					lastResult = result;
-					streak = 1;
-				}
-
 				String team = g.getHomeTeam().getName();
 				String owner = g.getHomeTeam().getOwner().getFirstName() + " "
 						+ g.getHomeTeam().getOwner().getLastInitial();
@@ -79,33 +58,45 @@ public class GameService {
 				long opposingOwnerId = g.getAwayTeam().getOwner().getId();
 				String division = g.getAwayTeam().getDivision();
 				String fullStreak = lastResult + String.valueOf(streak);
-
-				TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
-						opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
-						l, t, fullStreak);
-				teamGames.add(teamGame);
-			} else {
-				float teamScore = g.getAwayScore();
-				float opponentScore = g.getHomeScore();
+				
+				float teamScore = g.getHomeScore();
+				float opponentScore = g.getAwayScore();
 				String result;
-				if (teamScore > opponentScore) {
-					result = "W";
-					w++;
-				} else if (teamScore < opponentScore) {
-					result = "L";
-					l++;
-				} else {
-					result = "T";
-					t++;
+				// If the game is completed
+				if (g.isCompleted())
+				{
+					if (teamScore > opponentScore) {
+						result = "W";
+						w++;
+					} else if (teamScore < opponentScore) {
+						result = "L";
+						l++;
+					} else {
+						result = "T";
+						t++;
+					}
+	
+					if (result == lastResult) {
+						streak++;
+					} else {
+						lastResult = result;
+						streak = 1;
+					}
+	
+					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
+							opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
+							l, t, fullStreak);
+					teamGames.add(teamGame);
+					System.out.println("1 - home");
+				} // If the game is not completed
+				else 
+				{
+					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
+							opposingOwner, opposingOwnerId, division, g.getGameType());
+					teamGames.add(teamGame);
+					System.out.println("2 - home");
 				}
-
-				if (result == lastResult) {
-					streak++;
-				} else {
-					lastResult = result;
-					streak = 1;
-				}
-
+			} else {
 				String team = g.getAwayTeam().getName();
 				String owner = g.getAwayTeam().getOwner().getFirstName() + " "
 						+ g.getAwayTeam().getOwner().getLastInitial();
@@ -116,11 +107,45 @@ public class GameService {
 				long opposingOwnerId = g.getHomeTeam().getOwner().getId();
 				String division = g.getHomeTeam().getDivision();
 				String fullStreak = lastResult + String.valueOf(streak);
-
-				TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
-						opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
-						l, t, fullStreak);
-				teamGames.add(teamGame);
+				
+				float teamScore = g.getAwayScore();
+				float opponentScore = g.getHomeScore();
+				String result;
+				// If the game is completed
+				if (g.isCompleted())
+				{
+					if (teamScore > opponentScore) {
+						result = "W";
+						w++;
+					} else if (teamScore < opponentScore) {
+						result = "L";
+						l++;
+					} else {
+						result = "T";
+						t++;
+					}
+	
+					if (result == lastResult) {
+						streak++;
+					} else {
+						lastResult = result;
+						streak = 1;
+					}
+	
+					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
+							opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
+							l, t, fullStreak);
+					teamGames.add(teamGame);
+					System.out.println("1 - away");
+				} // If the game is not completed
+				else
+				{
+					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
+							opposingOwner, opposingOwnerId, division, g.getGameType());
+					System.out.println(teamGame.toString());
+					teamGames.add(teamGame);
+					System.out.println("2 - away");
+				}
 			}
 		}
 		return teamGames;
