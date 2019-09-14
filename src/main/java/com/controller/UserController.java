@@ -2,13 +2,16 @@ package com.controller;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,6 +52,23 @@ public class UserController {
 		return new ResponseEntity<>(
 				userService.findByUsername(principal.getName()),
 				HttpStatus.OK);
+	}
+	
+	@GetMapping("/user/{username}")
+	public User getUserInfo(@PathVariable String username) {
+		return userService.findByUsername(username);
+	}
+	
+	@PutMapping("/edit/{id}")
+	public ResponseEntity<?> updateUser(@PathVariable long id, @RequestBody User user) {
+		User currentUser = userService.findById(id);
+		if (currentUser == null) {
+			return new ResponseEntity<String>(("Unable to upate. User with id " + id + " not found."),
+                    HttpStatus.NOT_FOUND);
+		} else {
+			User updatedUser = userService.updateUser(user);
+			return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
+		}
 	}
 	
 }
