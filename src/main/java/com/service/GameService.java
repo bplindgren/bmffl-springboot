@@ -57,7 +57,6 @@ public class GameService {
 						+ g.getAwayTeam().getOwner().getLastInitial();
 				long opposingOwnerId = g.getAwayTeam().getOwner().getId();
 				String division = g.getAwayTeam().getDivision();
-				String fullStreak = lastResult + String.valueOf(streak);
 				
 				float teamScore = g.getHomeScore();
 				float opponentScore = g.getAwayScore();
@@ -82,19 +81,19 @@ public class GameService {
 						lastResult = result;
 						streak = 1;
 					}
-	
+
+					String fullStreak = lastResult + String.valueOf(streak);
+					
 					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
 							opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
 							l, t, fullStreak);
 					teamGames.add(teamGame);
-					System.out.println("1 - home");
 				} // If the game is not completed
 				else 
 				{
 					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
 							opposingOwner, opposingOwnerId, division, g.getGameType());
 					teamGames.add(teamGame);
-					System.out.println("2 - home");
 				}
 			} else {
 				String team = g.getAwayTeam().getName();
@@ -106,7 +105,6 @@ public class GameService {
 						+ g.getHomeTeam().getOwner().getLastInitial();
 				long opposingOwnerId = g.getHomeTeam().getOwner().getId();
 				String division = g.getHomeTeam().getDivision();
-				String fullStreak = lastResult + String.valueOf(streak);
 				
 				float teamScore = g.getAwayScore();
 				float opponentScore = g.getHomeScore();
@@ -131,20 +129,19 @@ public class GameService {
 						lastResult = result;
 						streak = 1;
 					}
+
+					String fullStreak = lastResult + String.valueOf(streak);
 	
 					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
 							opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
 							l, t, fullStreak);
 					teamGames.add(teamGame);
-					System.out.println("1 - away");
 				} // If the game is not completed
 				else
 				{
 					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
 							opposingOwner, opposingOwnerId, division, g.getGameType());
-					System.out.println(teamGame.toString());
 					teamGames.add(teamGame);
-					System.out.println("2 - away");
 				}
 			}
 		}

@@ -22,7 +22,10 @@ public class User implements Serializable {
 	private long id;
 	
 	@Column(nullable=false)
-	private String name;
+	private String firstname;
+	
+	@Column(nullable=false)
+	private String lastname;
 	
 	@Column(nullable=false)
 	private String username;
@@ -36,13 +39,34 @@ public class User implements Serializable {
 	@Enumerated(EnumType.STRING)
 	@Column(name="role")
 	private Role role;
-
-	public String getName() {
-		return name;
+	
+	@Column
+	private String favbmfflteam;
+	
+	@Column
+	private String favnflteam;
+	
+	@Column(nullable=false)
+	private Boolean active;
+	
+	public Long getId() {
+		return id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getUsername() {
@@ -75,6 +99,30 @@ public class User implements Serializable {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	public String getFavbmfflteam() {
+		return favbmfflteam;
+	}
+
+	public void setFavbmfflteam(String favbmfflteam) {
+		this.favbmfflteam = favbmfflteam;
+	}
+
+	public String getFavnflteam() {
+		return favnflteam;
+	}
+
+	public void setFavnflteam(String favnflteam) {
+		this.favnflteam = favnflteam;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 	
 }
