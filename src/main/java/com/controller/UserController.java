@@ -67,7 +67,7 @@ public class UserController {
                     HttpStatus.NOT_FOUND);
 		} else {
 			User updatedUser = userService.updateUser(user);
-			return new ResponseEntity<User>(HttpStatus.OK);
+			return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
 		}
 	}
 	
