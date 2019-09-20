@@ -22,11 +22,14 @@ public class Entry {
 	@Column(name="id", nullable=false)
 	private long id;
 	
+	@Column(name="Title", length=128, nullable=false)
+	private String title;
+	
 	@Column(name="content", length=1024, nullable=false)
 	private String content;
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(nullable=false)
+	@JoinColumn(nullable=true)
 	private User createdBy;
 	
 	@Column(name="createdAt", updatable=false)
@@ -34,6 +37,15 @@ public class Entry {
 	
 	@Column(name="modifiedAt")
 	private Date modifiedAt;
+	
+	public Entry () {}
+
+	public Entry(String title, String content, User user, Date date) {
+		this.title = title;
+		this.content = content;
+		this.createdBy = user;
+		this.createdAt = date;
+	}
 
 	public long getId() {
 		return id;
@@ -41,6 +53,14 @@ public class Entry {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getContent() {
