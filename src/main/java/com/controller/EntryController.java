@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,14 +46,20 @@ public class EntryController {
 		String content = entry.getContent();		
 		User user = userService.findById(entry.getUserId());
 		
-		// Get created at time
-		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("CDT"));
-		Date date = cal.getTime();
-		
 		// Create and save entry
-		Entry entryToSave = new Entry(title, content, user, date);
+		Entry entryToSave = new Entry(title, content, user);
 		entryService.save(entryToSave);
 
 		return new ResponseEntity<>(entry, HttpStatus.CREATED);
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<?> delete(@PathVariable long id) {
+		if (entryService.findById(id) == null) {
+			return new ResponseEntity<String>(("Unable to delete"), HttpStatus.NOT_FOUND);
+		} else {
+			entryService.deleteById(id);
+			return new ResponseEntity<>(HttpStatus.OK);
+		}
 	}
 }

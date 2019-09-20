@@ -18,8 +18,16 @@ public class EntryService {
 		return entryRepository.findAll();
 	}
 	
+	public Entry findById(long id) {
+		return entryRepository.findById(id);
+	}
+	
 	public Entry save(Entry entry) {
 		entryRepository.save(entry);
 		return entry;
+	}
+
+	public void deleteById(long id) {
+		entryRepository.deleteById(id);
 	}
 }

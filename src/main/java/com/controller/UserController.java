@@ -34,6 +34,7 @@ public class UserController {
 	
 	@PostMapping("/register")
 	public ResponseEntity<?> register(@RequestBody User user) {
+		// Check to make sure username doesn't already exist
 		if (userService.findByUsername(user.getUsername()) != null) {
 			return new ResponseEntity<>(HttpStatus.CONFLICT);
 		}

@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name="entries")
@@ -28,23 +31,24 @@ public class Entry {
 	@Column(name="content", length=1024, nullable=false)
 	private String content;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(nullable=true)
 	private User createdBy;
 	
+	@CreationTimestamp
 	@Column(name="createdAt", updatable=false)
 	private Date createdAt;
 	
+	@UpdateTimestamp
 	@Column(name="modifiedAt")
 	private Date modifiedAt;
 	
 	public Entry () {}
 
-	public Entry(String title, String content, User user, Date date) {
+	public Entry(String title, String content, User user) {
 		this.title = title;
 		this.content = content;
 		this.createdBy = user;
-		this.createdAt = date;
 	}
 
 	public long getId() {

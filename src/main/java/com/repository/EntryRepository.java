@@ -8,4 +8,6 @@ import com.entity.Entry;
 public interface EntryRepository extends JpaRepository<Entry, Long> {
 
 	List<Entry> findAll();
+	
+	Entry findById(long id);
 }
