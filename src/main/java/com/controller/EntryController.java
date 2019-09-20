@@ -3,6 +3,7 @@ package com.controller;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,22 +36,43 @@ public class EntryController {
 	private UserService userService;
 	
 	@GetMapping("/all")
-	public List<Entry> getEntries() {
-		return entryService.getEntries();
+	public ResponseEntity<List<Entry>> getEntries() {
+		List<Entry> list = entryService.getEntries();
+		
+		return new ResponseEntity<List<Entry>>(list, HttpStatus.OK);
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<?> createEntry(@RequestBody NewEntry entry) {
-		// Get info for Entry object
-		String title = entry.getTitle();
-		String content = entry.getContent();		
-		User user = userService.findById(entry.getUserId());
+	public ResponseEntity<Entry> createOrUpdateEntry(@RequestBody NewEntry entry) {
+		Optional<Entry> dbEntry = entryService.findById(entry.getId());
 		
-		// Create and save entry
-		Entry entryToSave = new Entry(title, content, user);
-		entryService.save(entryToSave);
+		// If the entry already exists
+		if (dbEntry.isPresent()) {
+			// Get Existing entry and update new values
+			Entry updated = dbEntry.get();
+			updated.setTitle(entry.getTitle());
+			updated.setContent(entry.getContent());
+			
+			Calendar c = Calendar.getInstance(TimeZone.getTimeZone("CDT"));
+			Date now = c.getTime();
+			updated.setModifiedAt(now);
+			
+			// Save the updates 
+			entryService.save(updated);
+			return new ResponseEntity<Entry>(updated, HttpStatus.OK);
+			
+		} else {
+			// Get info for Entry object
+			String title = entry.getTitle();
+			String content = entry.getContent();		
+			User user = userService.findById(entry.getUserId());
+			
+			// Create and save entry
+			Entry entryToSave = new Entry(title, content, user);
+			entryService.save(entryToSave);
 
-		return new ResponseEntity<>(entry, HttpStatus.CREATED);
+			return new ResponseEntity<Entry>(HttpStatus.CREATED);			
+		}
 	}
 	
 	@DeleteMapping("/delete/{id}")
@@ -62,4 +84,5 @@ public class EntryController {
 			return new ResponseEntity<>(HttpStatus.OK);
 		}
 	}
+
 }

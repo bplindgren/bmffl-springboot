@@ -1,6 +1,7 @@
 package com.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class EntryService {
 		return entryRepository.findAll();
 	}
 	
-	public Entry findById(long id) {
+	public Optional<Entry> findById(long id) {
 		return entryRepository.findById(id);
 	}
 	
