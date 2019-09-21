@@ -33,13 +33,14 @@ public class UserController {
 	}
 	
 	@PostMapping("/register")
-	public ResponseEntity<?> register(@RequestBody User user) {
+	public ResponseEntity<User> register(@RequestBody User user) {
 		// Check to make sure username doesn't already exist
 		if (userService.findByUsername(user.getUsername()) != null) {
-			return new ResponseEntity<>(HttpStatus.CONFLICT);
+			return new ResponseEntity<User>(HttpStatus.CONFLICT);
 		}
 		
 		user.setRole(Role.USER);
+		user.setActive(true);
 		userService.save(user);
 		return new ResponseEntity<>(user, HttpStatus.CREATED);
 	}
@@ -49,14 +50,15 @@ public class UserController {
 		if (principal == null || principal.getName() == null) {
 			return ResponseEntity.ok(principal);
 		}
-		return new ResponseEntity<>(
+		return new ResponseEntity<User>(
 				userService.findByUsername(principal.getName()),
 				HttpStatus.OK);
 	}
 	
 	@GetMapping("/user/{username}")
-	public User getUserInfo(@PathVariable String username) {
-		return userService.findByUsername(username);
+	public ResponseEntity<User> getUserInfo(@PathVariable String username) {
+		User user = userService.findByUsername(username);
+		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
 	@PutMapping("/edit/{id}")

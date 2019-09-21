@@ -32,3 +32,4 @@ public class EntryService {
 		entryRepository.deleteById(id);
 	}
 }
+
