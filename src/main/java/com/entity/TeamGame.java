@@ -1,6 +1,7 @@
 package com.entity;
 
 public class TeamGame {
+	public Long id;
 	public int week;
 	public String team;
 	public String owner;
@@ -19,8 +20,9 @@ public class TeamGame {
 	public short t;
 	public String fullStreak;
 	
-	public TeamGame(int week, String team, String owner, String home, String opposingTeam, long opposingTeamId,
+	public TeamGame(Long id, int week, String team, String owner, String home, String opposingTeam, long opposingTeamId,
 			String opposingOwner, long opposingOwnerId, String division, String gameType) {
+		this.id = id;
 		this.week = week;
 		this.team = team;
 		this.owner = owner;
@@ -33,9 +35,10 @@ public class TeamGame {
 		this.gameType = gameType;
 	}
 
-	public TeamGame(int week, String team, String owner, String home, String opposingTeam, long opposingTeamId,
+	public TeamGame(Long id, int week, String team, String owner, String home, String opposingTeam, long opposingTeamId,
 			String opposingOwner, long opposingOwnerId, String division, String result,
 			float teamScore, float opponentScore, String gameType, short w, short l, short t, String fullStreak) {
+		this.id = id;
 		this.week = week;
 		this.team = team;
 		this.owner = owner;
@@ -53,6 +56,14 @@ public class TeamGame {
 		this.l = l;
 		this.t = t;
 		this.fullStreak = fullStreak;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public int getWeek() {

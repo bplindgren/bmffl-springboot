@@ -46,7 +46,7 @@ public class GameService {
 		for (Game g : games) {
 			long homeId = g.getHomeTeam().getId();
 			String isHome = (homeId == id) ? "" : "@";
-
+			
 			if (homeId == id) {
 				String team = g.getHomeTeam().getName();
 				String owner = g.getHomeTeam().getOwner().getFirstName() + " "
@@ -84,14 +84,14 @@ public class GameService {
 
 					String fullStreak = lastResult + String.valueOf(streak);
 					
-					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
+					TeamGame teamGame = new TeamGame(g.getId(), g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
 							opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
 							l, t, fullStreak);
 					teamGames.add(teamGame);
 				} // If the game is not completed
 				else 
 				{
-					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
+					TeamGame teamGame = new TeamGame(g.getId(), g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
 							opposingOwner, opposingOwnerId, division, g.getGameType());
 					teamGames.add(teamGame);
 				}
@@ -132,19 +132,20 @@ public class GameService {
 
 					String fullStreak = lastResult + String.valueOf(streak);
 	
-					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
+					TeamGame teamGame = new TeamGame(g.getId(), g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
 							opposingOwner, opposingOwnerId, division, result, teamScore, opponentScore, g.getGameType(), w,
 							l, t, fullStreak);
 					teamGames.add(teamGame);
 				} // If the game is not completed
 				else
 				{
-					TeamGame teamGame = new TeamGame(g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
+					TeamGame teamGame = new TeamGame(g.getId(), g.getWeek(), team, owner, isHome, opposingTeam, opposingTeamId,
 							opposingOwner, opposingOwnerId, division, g.getGameType());
 					teamGames.add(teamGame);
 				}
 			}
 		}
+			
 		return teamGames;
 	}
 

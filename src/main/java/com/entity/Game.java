@@ -34,31 +34,33 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 	}
 )
 public class Game {
+	
+	public Game() {}
 
-//	public Game(long id, Season season, int week, Team awayTeam, float awayScore, Team homeTeam, float homeScore,
-//			String gameType, boolean completed) {
-//		this.id = id;
-//		this.season = season;
-//		this.week = week;
-//		this.awayTeam = awayTeam;
-//		this.awayScore = awayScore;
-//		this.homeTeam = homeTeam;
-//		this.homeScore = homeScore;
-//		this.gameType = gameType;
-//		this.completed = completed;
-//	}
-//
-//	public Game(long id, int week, Team awayTeam, float awayScore, Team homeTeam, float homeScore,
-//			String gameType, boolean completed) {
-//		this.id = id;
-//		this.week = week;
-//		this.awayTeam = awayTeam;
-//		this.awayScore = awayScore;
-//		this.homeTeam = homeTeam;
-//		this.homeScore = homeScore;
-//		this.gameType = gameType;
-//		this.completed = completed;
-//	}
+	public Game(long id, Season season, int week, Team awayTeam, float awayScore, Team homeTeam, float homeScore,
+			String gameType, boolean completed) {
+		this.id = id;
+		this.season = season;
+		this.week = week;
+		this.awayTeam = awayTeam;
+		this.awayScore = awayScore;
+		this.homeTeam = homeTeam;
+		this.homeScore = homeScore;
+		this.gameType = gameType;
+		this.completed = completed;
+	}
+
+	public Game(long id, int week, Team awayTeam, float awayScore, Team homeTeam, float homeScore,
+			String gameType, boolean completed) {
+		this.id = id;
+		this.week = week;
+		this.awayTeam = awayTeam;
+		this.awayScore = awayScore;
+		this.homeTeam = homeTeam;
+		this.homeScore = homeScore;
+		this.gameType = gameType;
+		this.completed = completed;
+	}
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
