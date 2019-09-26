@@ -31,7 +31,7 @@ public class Entry {
 	@Column(name="content", length=1024, nullable=false)
 	private String content;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(nullable=true)
 	private User createdBy;
 	
