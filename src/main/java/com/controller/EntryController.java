@@ -71,7 +71,7 @@ public class EntryController {
 			Entry entryToSave = new Entry(title, content, user);
 			entryService.save(entryToSave);
 
-			return new ResponseEntity<Entry>(HttpStatus.CREATED);			
+			return new ResponseEntity<Entry>(entryToSave, HttpStatus.CREATED);			
 		}
 	}
 	
