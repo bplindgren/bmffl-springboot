@@ -32,7 +32,7 @@ public class Entry {
 	private String content;
 	
 	@OneToOne
-	@JoinColumn(nullable=true)
+	@JoinColumn(name="createdBy_id", nullable=true)
 	private User createdBy;
 	
 	@CreationTimestamp
