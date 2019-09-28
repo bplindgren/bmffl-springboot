@@ -39,7 +39,6 @@ public class UserService {
 	}
 	
 	public User save(User user) {
-		System.out.println("Password: " + user.getPassword());
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		userRepository.save(user);
 		return user;
