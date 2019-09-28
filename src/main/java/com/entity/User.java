@@ -11,6 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name="users")
@@ -33,6 +36,7 @@ public class User implements Serializable {
 	@Column(nullable=false)
 	private String email;
 	
+	@JsonProperty(access = Access.WRITE_ONLY)
 	@Column(nullable=false)
 	private String password;
 
