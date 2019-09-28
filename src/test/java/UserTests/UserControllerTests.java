@@ -1,31 +1,28 @@
 package UserTests;
 
-import com.Bmffl2018Application;
-import com.entity.Role;
-import com.entity.User;
-import com.service.UserService;
-import com.repository.UserRepository;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import org.apache.commons.lang3.RandomStringUtils;
-import com.brad.bmffl2018.TestUtil;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.cache.CacheManager;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.Bmffl2018Application;
+import com.brad.bmffl2018.TestUtil;
+import com.entity.Role;
+import com.entity.User;
+import com.repository.UserRepository;
+import com.service.UserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Bmffl2018Application.class)
@@ -63,10 +60,10 @@ public class UserControllerTests {
     
     public static User createEntity(EntityManager em) {
         User user = new User();
-        user.setUsername(DEFAULT_USERNAME + RandomStringUtils.randomAlphabetic(5));
-        user.setPassword(RandomStringUtils.random(60));
+        user.setUsername(DEFAULT_USERNAME);
+        user.setPassword(DEFAULT_PASSWORD);
         user.setActive(true);
-        user.setEmail(RandomStringUtils.randomAlphabetic(5) + DEFAULT_EMAIL);
+        user.setEmail(DEFAULT_EMAIL);
         user.setFirstname(DEFAULT_FIRSTNAME);
         user.setLastname(DEFAULT_LASTNAME);
         return user;
