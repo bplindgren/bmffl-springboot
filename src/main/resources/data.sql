@@ -820,7 +820,7 @@ insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_i
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (702, 9, 15, 82, 134.2, 88, 86.7, true, 'Consolation Game');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (703, 9, 15, 86, 112.9, 84, 113.9, true, 'Consolation Game');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (704, 9, 15, 89, 101.1, 90, 112, true, 'Consolation Game');
-insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (705, 9, 15, 83, 71.3, 87, 71.2, true, 'Semi Final');
+insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (705, 9, 15, 83, 71.2, 87, 71.3, true, 'Semi Final');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (706, 9, 15, 81, 117.3, 85, 97.5, true, 'Semi Final');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (707, 9, 16, 83, 75.1, 85, 124.6, true, 'Consolation Game');
 insert into bmffl.games (id, season_id, week, awayTeam_id, awayScore, homeTeam_id, homeScore, completed, gameType) values (708, 9, 16, 82, 75.4, 88, 49, true, 'Consolation Game');
